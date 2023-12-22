@@ -29,7 +29,7 @@ module alu(
     
     always@(posedge clk) begin
         if(rst == `RstEnable) begin
-        logicout <= `ZeroWord;
+            logicout <= `ZeroWord;
         end 
         else if(aluop_i==`OP) begin//************ opcode == OP begin************
                 if(funct7==7'b0000000)begin

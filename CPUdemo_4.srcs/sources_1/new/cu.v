@@ -4,7 +4,7 @@ module cu(
     input wire          clk,
     input wire          rst,
     input wire[`RegBus]         inst,
-    input wire [`ADDR_BUS]      pcadd,
+    input wire [`ADDR_BUS]      pcadd,//当前PC地址
     input wire [`RegBus]        valid_bit,//读取记分牌当前有效位
     
     //读取得Regfile的值
@@ -17,7 +17,11 @@ module cu(
     output reg[`RegAddr]        reg2_addr,
     output reg[4:0]             id_chvdb,//目的寄存器地址，用于记分牌功能
     
+    
     //输出到EX阶段
+        //到Add
+    output wire [`ADDR_BUS]      pcadd_o,
+        //到ALU
     output reg                  stop, //停机信号
     output reg [9:0]            source_regs, //源寄存器地址，用于记分牌功能
     output reg[`AluOpBus]       aluop_o,//
@@ -170,8 +174,19 @@ module cu(
                                 source_regs = 10'b00000_00000;
                             end
                     end
-                    `JAL:begin
-                            
+                    `JAL:begin//处理上可以类似U类指令，对其中的imm20进行分割截取
+                            wd_o   =  inst[11:7];
+                            if(valid_bit[wd_o]) begin//检查记分牌,要暂存pc的寄存器未被占用
+                                stop <= 1;
+                                aluop_o <= operate;
+                                wreg_o  <=  `WriteEnable;
+                                reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
+                                reg2_read <= `ReadDisable;
+                                instvalid   =  `InstValid;
+                            end
+                            else begin
+                                
+                            end
                     end
                     `JALR:begin
                     end
