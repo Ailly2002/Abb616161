@@ -48,6 +48,9 @@ module regfile(
         if (rst == `RstDisable) begin
             if((we == `WriteEnable) && (wd_addr != 5'b00000)) begin
                 regs[wd_addr] <= wd_wdata;
+                reg_valid[wb_chvdb[4:0]] =  1'b0;//在ID段修改对应位为有效
+                reg_valid[wb_chvdb[9:5]] =  1'b0;
+                reg_valid[wd_addr] =        1'b0;
             end
         end
     end
@@ -58,12 +61,6 @@ module regfile(
         reg_valid[rs2_addr] = 1'b1;
         reg_valid[id_chvdb] = 1'b1;
     end
-        //WBU写入时
-    always @ (wd_addr)begin//在ID段修改对应位为有效
-        reg_valid[wb_chvdb[4:0]] =  1'b0;
-        reg_valid[wb_chvdb[9:5]] =  1'b0;
-        reg_valid[wd_addr] =        1'b0;
-    end 
         
     always @(*)begin
         valid_bit <= ~reg_valid;

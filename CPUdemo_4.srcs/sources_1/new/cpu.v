@@ -30,6 +30,7 @@ module cpu(
     wire[`RegBus] reg2_data;
     wire[`RegAddr] reg1_addr;
     wire[`RegAddr] reg2_addr;
+    wire[4:0] id_mvdb;
     wire[`RegBus] rf_idvalid;
     //连接EX模块和WB模块
     wire[9:0] ex_wb_vdb;
@@ -57,13 +58,13 @@ module cpu(
 //****译码****
     cu IDU(
         .clk(clk),.rst(rst),.inst(ins),.pcadd(ir_idpc),.valid_bit(rf_idvalid),//idu当中运用记分牌部分尚未完成
-        .reg1_data(reg1_data),.reg2_data(reg2_data),.reg1_read(reg1_read),.reg2_read(reg2_read),.reg1_addr(reg1_addr),.reg2_addr(reg2_addr),
+        .reg1_data(reg1_data),.reg2_data(reg2_data),.reg1_read(reg1_read),.reg2_read(reg2_read),.reg1_addr(reg1_addr),.reg2_addr(reg2_addr),.id_chvdb(id_mvdb),
         .stop(stop),.source_regs(id_ex_vdb), 
         .aluop_o(id_aluop),.funct7(id_alufuns),.funct3(id_alusel),.reg1_o(id_reg1),.reg2_o(id_reg2),.wd_o(id_wd),.wreg_o(id_wreg)
         );
     //寄存器堆
     regfile GPR(
-        .clk(clk), .rst(rst),.id_chvdb(),.wb_chvdb(wb_rf_vdb),
+        .clk(clk), .rst(rst),.id_chvdb(id_mvdb),.wb_chvdb(wb_rf_vdb),
         .re1(reg1_read),.rs1_addr(reg1_addr),.rs1_data(reg1_data),.re2(reg2_read),.rs2_addr(reg2_addr),.rs2_data(reg2_data),
         .we(wb_wreg),.wd_addr(wb_wd),.wd_wdata(wb_wdata),.disp_dat(rg_digd),.valid_bit(rf_idvalid)
         );

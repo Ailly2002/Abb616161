@@ -1,4 +1,4 @@
- //MDR
+ //WBU
  //Load & Store
 module wbu(
     input wire rst,

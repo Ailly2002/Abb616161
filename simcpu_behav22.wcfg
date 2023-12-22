@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="simcpu_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="simcpu" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="75.051 ns"></ZoomEndTime>
+      <Cursor1Time time="124.972 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="533"></NameColumnWidth>
+      <ValueColumnWidth column_width="259"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="32" />
+   <wvobject fp_name="/simcpu/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/PC/pc" type="array">
+      <obj_property name="ElementShortName">pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/PC/halt" type="logic">
+      <obj_property name="ElementShortName">halt</obj_property>
+      <obj_property name="ObjectShortName">halt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IR/addr" type="array">
+      <obj_property name="ElementShortName">addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IR/Ins" type="array">
+      <obj_property name="ElementShortName">Ins[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Ins[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IR/pcaddr" type="array">
+      <obj_property name="ElementShortName">pcaddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pcaddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IDU/id_chvdb" type="array">
+      <obj_property name="ElementShortName">id_chvdb[4:0]</obj_property>
+      <obj_property name="ObjectShortName">id_chvdb[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IDU/stop" type="logic">
+      <obj_property name="ElementShortName">stop</obj_property>
+      <obj_property name="ObjectShortName">stop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IDU/source_regs" type="array">
+      <obj_property name="ElementShortName">source_regs[9:0]</obj_property>
+      <obj_property name="ObjectShortName">source_regs[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IDU/reg1_o" type="array">
+      <obj_property name="ElementShortName">reg1_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg1_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IDU/reg2_o" type="array">
+      <obj_property name="ElementShortName">reg2_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg2_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IDU/wd_o" type="array">
+      <obj_property name="ElementShortName">wd_o[4:0]</obj_property>
+      <obj_property name="ObjectShortName">wd_o[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IDU/wreg_o" type="logic">
+      <obj_property name="ElementShortName">wreg_o</obj_property>
+      <obj_property name="ObjectShortName">wreg_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IDU/imm12" type="array">
+      <obj_property name="ElementShortName">imm12[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imm12[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/IDU/imm20" type="array">
+      <obj_property name="ElementShortName">imm20[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imm20[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/GPR/id_chvdb" type="array">
+      <obj_property name="ElementShortName">id_chvdb[4:0]</obj_property>
+      <obj_property name="ObjectShortName">id_chvdb[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/GPR/wb_chvdb" type="array">
+      <obj_property name="ElementShortName">wb_chvdb[9:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_chvdb[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/GPR/disp_dat" type="array">
+      <obj_property name="ElementShortName">disp_dat[11:0]</obj_property>
+      <obj_property name="ObjectShortName">disp_dat[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/GPR/valid_bit" type="array">
+      <obj_property name="ElementShortName">valid_bit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">valid_bit[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/ALU/in1" type="array">
+      <obj_property name="ElementShortName">in1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/ALU/in2" type="array">
+      <obj_property name="ElementShortName">in2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/ALU/ex_chvdb" type="array">
+      <obj_property name="ElementShortName">ex_chvdb[9:0]</obj_property>
+      <obj_property name="ObjectShortName">ex_chvdb[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/ALU/wd_o" type="array">
+      <obj_property name="ElementShortName">wd_o[4:0]</obj_property>
+      <obj_property name="ObjectShortName">wd_o[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/ALU/wreg_o" type="logic">
+      <obj_property name="ElementShortName">wreg_o</obj_property>
+      <obj_property name="ObjectShortName">wreg_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/ALU/z" type="array">
+      <obj_property name="ElementShortName">z[31:0]</obj_property>
+      <obj_property name="ObjectShortName">z[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/WB/wb_chvdb" type="array">
+      <obj_property name="ElementShortName">wb_chvdb[9:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_chvdb[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/WB/wb_wreg" type="logic">
+      <obj_property name="ElementShortName">wb_wreg</obj_property>
+      <obj_property name="ObjectShortName">wb_wreg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/WB/wb_addr" type="array">
+      <obj_property name="ElementShortName">wb_addr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_addr[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/WB/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/GPR/reg_valid" type="array">
+      <obj_property name="ElementShortName">reg_valid[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_valid[31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/simcpu/cpu/GPR/regs" type="array">
+      <obj_property name="ElementShortName">regs[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">regs[0:31][31:0]</obj_property>
+   </wvobject>
+</wave_config>
