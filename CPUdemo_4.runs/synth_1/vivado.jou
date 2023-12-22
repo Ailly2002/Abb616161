@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2.2 (64-bit)
+# SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
+# IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
+# Start of session at: Fri Dec 22 20:19:02 2023
+# Process ID: 27192
+# Current directory: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1
+# Command line: vivado.exe -log cpu.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu.tcl
+# Log file: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/cpu.vds
+# Journal file: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1\vivado.jou
+# Running On: LAPTOP-T2VDSBIN, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 12, Host memory: 14888 MB
+#-----------------------------------------------------------
+source cpu.tcl -notrace
