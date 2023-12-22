@@ -2,14 +2,14 @@
 2020.2
 Feb 21 2023
 20:21:35
-D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v,1703249462,verilog,,,,glbl,,,,,,,,
 D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v,1698216764,verilog,,,,simcpu,,,,,,,,
 D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/acc.v,1701949765,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,acc,,,,,,,,
-D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v,1703212916,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,alu,,,,,,,,
-D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v,1702999113,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v,,clk_use,,,,,,,,
-D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v,1703214715,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,cpu,,,,,,,,
-D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v,1703230559,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,cu,,,,,,,,
-D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,1703172334,verilog,,,,,,,,,,,,
+D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v,1703249462,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,alu,,,,,,,,
+D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v,1703249462,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v,,clk_use,,,,,,,,
+D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v,1703249462,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,cpu,,,,,,,,
+D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v,1703249462,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,cu,,,,,,,,
+D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,1703249462,verilog,,,,,,,,,,,,
 D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v,1703040243,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,digit_tubes,,,,,,,,
 D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v,1703231388,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,regfile,,,,,,,,
 D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v,1703161347,verilog,,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v,D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v,insReg,,,,,,,,
