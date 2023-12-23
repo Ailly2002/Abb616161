@@ -1,7 +1,6 @@
 `include "define.v"
 module cpu(
     input wire clk, rst,go,
-//    input wire[`RegBus]         rom_data,
     output wire [7:0] an,
     output wire [7:0] seg
 //    output wire [15:0] num
@@ -34,6 +33,20 @@ module cpu(
     wire[`RegAddr] reg2_addr;
     wire[4:0] id_mvdb;
     wire[`RegBus] rf_idvalid;
+    
+    //连接ID模块和EX_MUX
+    wire [`ADDR_BUS]id_adpc;
+    //连接PC_ADD和PC_MUX
+    wire[`ADDR_BUS] pcad_o;
+    //连接ID和ADD_MUX
+    wire [`RegBus]  jalr_rs1;
+    wire            j_type;
+    //连接ADD_MUX和EX_ADD
+    wire[`RegBus] mx_ad_o;
+    //连接ID和EX_ADD
+    wire[`RegBus] j_shift;
+    //连接EX_ADD和PC_MUX
+    wire[`RegBus] ex_add_o;
     //连接EX模块和WB模块
     wire[9:0] ex_wb_vdb;
     wire ex_wreg;
@@ -54,7 +67,7 @@ module cpu(
         .clk(clk), .rst(rst), .ct(ct),.pc_set(pc_i),.pc_bus_o(pc_bus)
         );//偏移字段有干涉，待修改
     mux2 ADD_MUX(
-        .in1(),.in2(pc_add_o),.sel(go),.out(pc_i)
+        .in1(ex_add_o),.in2(pc_add_o),.sel(go),.out(pc_i)
         );
     pc_add PC_ADD(
         .pc_dr(pc_bus),.stop(stop),.pc_next(pc_add_o)
@@ -65,8 +78,9 @@ module cpu(
 
 //****译码****
     cu IDU(
-        .clk(clk),.rst(rst),.inst(ins),.pcadd(ir_idpc),.valid_bit(rf_idvalid),//idu当中运用记分牌部分尚未完成
-        .reg1_data(reg1_data),.reg2_data(reg2_data),.reg1_read(reg1_read),.reg2_read(reg2_read),.reg1_addr(reg1_addr),.reg2_addr(reg2_addr),.id_chvdb(id_mvdb),
+        .clk(clk),.rst(rst),.inst(ins),.pcadd(ir_idpc),.valid_bit(rf_idvalid),
+        .reg1_data(reg1_data),.reg2_data(reg2_data),.reg1_read(reg1_read),.reg2_read(reg2_read),.reg1_addr(reg1_addr),.reg2_addr(reg2_addr),
+        .id_chvdb(id_mvdb),.pcadd_o(id_adpc),.shift(j_shift),.rs1_o(jalr_rs1),.j_type(j_type),
         .stop(stop),.source_regs(id_ex_vdb), 
         .aluop_o(id_aluop),.funct7(id_alufuns),.funct3(id_alusel),.reg1_o(id_reg1),.reg2_o(id_reg2),.wd_o(id_wd),.wreg_o(id_wreg)
         );
@@ -77,6 +91,12 @@ module cpu(
         .we(wb_wreg),.wd_addr(wb_wd),.wd_wdata(wb_wdata),.disp_dat(rg_digd),.valid_bit(rf_idvalid)
         );
 //****执行****
+    mux2 EX_MUX(
+        .in1(id_adpc),.in2(jalr_rs1),.sel(j_type),.out(mx_ad_o)//j=0,JAL(in1) j=1,JALR
+        );
+    add EX_ADD(
+        .in1(mx_ad_o),.shift(j_shift),.add_result(ex_add_o)
+        );
     alu ALU(
         .clk(clk),.rst(rst),.source_regs(id_ex_vdb),
         .aluop_i(id_aluop),.funct7(id_alufuns),.funct(id_alusel),.wd_i(id_wd),.wreg_i(id_wreg),.in1(id_reg1), .in2(id_reg2),

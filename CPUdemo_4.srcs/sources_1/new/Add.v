@@ -2,10 +2,12 @@
 //专门划分的原因是与ALU的output方向不同，Add将结果送到PC而非WBU
 `include "define.v"
 module add(
-    input wire [`ADDR_BUS]      pcadd,//当前PC地址
-    input wire [`RegBus] shift,
+    input wire [`RegBus]      in1,//当前PC地址
+    input wire [`RegBus]      shift,
     
-    output wire [`RegBus] offset//输出计算结果到PC
+    output reg [`RegBus]   add_result//输出计算结果到PC
 );
-
+    always @(*) begin
+        add_result = in1 + shift;
+    end
 endmodule

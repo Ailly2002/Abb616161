@@ -1,3 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/Add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module alu
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v" into library xil_defaultlib

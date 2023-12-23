@@ -20,7 +20,11 @@ module cu(
     
     //输出到EX阶段
         //到Add
-    output wire [`ADDR_BUS]      pcadd_o,
+    output reg [`ADDR_BUS]      pcadd_o,
+    output reg [`RegBus]        shift,//立即数偏移量，EX_ADD的另一个操作数
+        //到Add_MUX
+    output reg[`RegBus]         rs1_o,
+    output reg                  j_type,//跳转指令的类型：JAL/JALR
         //到ALU
     output reg                  stop, //停机信号
     output reg [9:0]            source_regs, //源寄存器地址，用于记分牌功能
@@ -233,7 +237,8 @@ module cu(
     end
     //维护记分牌
     always @(*)begin
-        id_chvdb <=  wd_o;
+        id_chvdb <= wd_o;
+        pcadd_o  <= pcadd;
     end
     //******
 //    always @(*) begin

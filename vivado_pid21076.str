@@ -928,3 +928,1049 @@ selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v",
 selectButton("OptionPane.button", "Discard"); // JButton
 // [GUI Memory]: 165 MB (+1700kb) [00:12:24]
 closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 2*"); // u
+// Elapsed time: 98 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux2.v", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "pc_add.v", 3); // o
+// Elapsed time: 80 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectCodeEditor("cpu.v", 388, 738); // ac
+selectCodeEditor("cpu.v", 388, 738, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 108 seconds
+selectCodeEditor("cpu.v", 418, 232); // ac
+selectCodeEditor("cpu.v", 418, 190); // ac
+selectCodeEditor("cpu.v", 552, 121); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 415 seconds
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // R
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu (cpu.v), IDU : cu (cu.v)]", 7, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu (cpu.v), IDU : cu (cu.v)]", 7, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("cu.v", 419, 236); // ac
+selectCodeEditor("cu.v", 419, 236, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cu.v", 466, 812); // ac
+selectCodeEditor("cu.v", 466, 812, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cu.v", 356, 453); // ac
+selectCodeEditor("cu.v", 152, 797); // ac
+selectCodeEditor("cu.v", 152, 797, false, false, false, false, true); // ac - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cu.v", 447, 824); // ac
+selectCodeEditor("cu.v", 447, 824, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cu.v", 'c'); // ac
+selectCodeEditor("cu.v", 415, 441); // ac
+typeControlKey((HResource) null, "cu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cu.v", 251, 495); // ac
+selectCodeEditor("cu.v", 251, 495, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cu.v", 143, 497); // ac
+selectCodeEditor("cu.v", 143, 497, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cu.v", 353, 502); // ac
+// Elapsed time: 41 seconds
+selectCodeEditor("cu.v", 188, 705); // ac
+selectCodeEditor("cu.v", 238, 713); // ac
+selectCodeEditor("cu.v", 250, 666); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 67 seconds
+selectCodeEditor("cu.v", 550, 802); // ac
+typeControlKey((HResource) null, "cu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 49 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux2.v", 1); // o
+selectCodeEditor("mux2.v", 460, 286); // ac
+selectCodeEditor("mux2.v", 454, 304); // ac
+selectCodeEditor("mux2.v", 459, 293); // ac
+selectCodeEditor("mux2.v", 462, 290); // ac
+selectCodeEditor("mux2.v", 475, 277); // ac
+typeControlKey((HResource) null, "mux2.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("mux2.v", 391, 308); // ac
+selectCodeEditor("mux2.v", 381, 298); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("mux2.v", 550, 331); // ac
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "simcpu.v", 0); // o
+selectCodeEditor("simcpu.v", 146, 230); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 36 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cu.v", 4); // o
+// Elapsed time: 17 seconds
+selectCodeEditor("cu.v", 709, 839); // ac
+typeControlKey((HResource) null, "cu.v", 'v'); // ac
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "cu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cu.v", 384, 891); // ac
+selectCodeEditor("cu.v", 841, 855); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 165 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "simcpu.v", 0); // o
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu (cpu.v)]", 2, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu (cpu.v)]", 2, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("cpu.v", 301, 535); // ac
+selectCodeEditor("cpu.v", 47, 129); // ac
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 230, 671); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 158, 674); // ac
+selectCodeEditor("cpu.v", 158, 674, false, false, false, false, true); // ac - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cu.v", 4); // o
+selectCodeEditor("cu.v", 425, 595); // ac
+selectCodeEditor("cu.v", 425, 595, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cu.v", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux2.v", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "simcpu.v", 0); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cu.v", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cu.v", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectCodeEditor("cpu.v", 1426, 270); // ac
+selectCodeEditor("cpu.v", 1565, 274); // ac
+selectCodeEditor("cpu.v", 1355, 266); // ac
+selectCodeEditor("cpu.v", 1210, 330); // ac
+selectCodeEditor("cpu.v", 1090, 316); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cu.v", 4); // o
+selectCodeEditor("cu.v", 425, 707); // ac
+selectCodeEditor("cu.v", 425, 707, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cu.v", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectCodeEditor("cpu.v", 532, 315); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cu.v", 4); // o
+selectCodeEditor("cu.v", 424, 745); // ac
+selectCodeEditor("cu.v", 424, 745, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cu.v", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 630, 310); // ac
+selectCodeEditor("cpu.v", 630, 310, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+// Elapsed time: 78 seconds
+selectCodeEditor("cpu.v", 421, 367); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 428, 374); // ac
+typeControlKey(null, null, 'z');
+selectCodeEditor("cpu.v", 347, 723); // ac
+selectCodeEditor("cpu.v", 376, 633); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 376, 633); // ac
+selectCodeEditor("cpu.v", 189, 310); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 193, 623); // ac
+selectCodeEditor("cpu.v", 289, 726); // ac
+selectCodeEditor("cpu.v", 300, 700); // ac
+selectCodeEditor("cpu.v", 300, 700, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+// Elapsed time: 32 seconds
+selectCodeEditor("cpu.v", 297, 288); // ac
+selectCodeEditor("cpu.v", 305, 272); // ac
+selectCodeEditor("cpu.v", 346, 169); // ac
+selectCodeEditor("cpu.v", 313, 206); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 362, 178); // ac
+selectCodeEditor("cpu.v", 291, 268); // ac
+selectCodeEditor("cpu.v", 291, 268, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 433, 269); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 157, 695); // ac
+selectCodeEditor("cpu.v", 276, 705); // ac
+selectCodeEditor("cpu.v", 276, 705, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 255, 688); // ac
+selectCodeEditor("cpu.v", 269, 705); // ac
+selectCodeEditor("cpu.v", 269, 705, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 32 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux2.v", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectCodeEditor("cpu.v", 153, 710); // ac
+// Elapsed time: 15 seconds
+selectCodeEditor("cpu.v", 533, 711); // ac
+selectCodeEditor("cpu.v", 533, 711, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 37 seconds
+selectCodeEditor("cpu.v", 540, 509); // ac
+selectCodeEditor("cpu.v", 374, 842); // ac
+selectCodeEditor("cpu.v", 373, 904); // ac
+selectCodeEditor("cpu.v", 388, 880); // ac
+selectCodeEditor("cpu.v", 395, 831); // ac
+selectCodeEditor("cpu.v", 410, 785); // ac
+selectCodeEditor("cpu.v", 345, 874); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 337, 885); // ac
+selectCodeEditor("cpu.v", 238, 952); // ac
+selectCodeEditor("cpu.v", 238, 952, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 553, 554); // ac
+selectCodeEditor("cpu.v", 553, 554, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 565, 557); // ac
+selectCodeEditor("cpu.v", 565, 557, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 154, 100); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 745, 94); // ac
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("cpu.v", 566, 865); // ac
+selectCodeEditor("cpu.v", 566, 865, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("cpu.v", 412, 673); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 15 seconds
+selectCodeEditor("cpu.v", 287, 628); // ac
+selectCodeEditor("cpu.v", 287, 628, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 422, 640); // ac
+selectCodeEditor("cpu.v", 422, 640, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 551, 640); // ac
+selectCodeEditor("cpu.v", 551, 640, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 32 seconds
+selectCodeEditor("cpu.v", 138, 410); // ac
+selectCodeEditor("cpu.v", 138, 410, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 109, 416); // ac
+selectCodeEditor("cpu.v", 232, 379); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 1,196 MB. GUI used memory: 103 MB. Current time: 12/23/23, 9:18:44 PM CST
+selectCodeEditor("cpu.v", 291, 416); // ac
+selectCodeEditor("cpu.v", 291, 416, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 751, 637); // ac
+selectCodeEditor("cpu.v", 747, 634); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 929, 616); // ac
+selectCodeEditor("cpu.v", 421, 952); // ac
+selectCodeEditor("cpu.v", 421, 952, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 610, 732); // ac
+selectCodeEditor("cpu.v", 610, 732, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 550 seconds
+selectCodeEditor("cpu.v", 164, 624); // ac
+selectCodeEditor("cpu.v", 156, 632); // ac
+// Elapsed time: 53 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux2.v", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectCodeEditor("cpu.v", 291, 628); // ac
+selectCodeEditor("cpu.v", 291, 628, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 156, 632); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 751, 640); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 26 seconds
+selectCodeEditor("cpu.v", 819, 645); // ac
+selectCodeEditor("cpu.v", 936, 639); // ac
+selectCodeEditor("cpu.v", 769, 628); // ac
+selectCodeEditor("cpu.v", 774, 628); // ac
+selectCodeEditor("cpu.v", 860, 635); // ac
+selectCodeEditor("cpu.v", 757, 620); // ac
+selectCodeEditor("cpu.v", 767, 620); // ac
+// Elapsed time: 23 seconds
+selectCodeEditor("cpu.v", 730, 666); // ac
+selectCodeEditor("cpu.v", 765, 627); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 858, 656); // ac
+selectCodeEditor("cpu.v", 324, 631); // ac
+// Elapsed time: 17 seconds
+selectCodeEditor("cpu.v", 591, 638); // ac
+selectCodeEditor("cpu.v", 592, 637, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 605, 686); // ac
+selectCodeEditor("cpu.v", 893, 209); // ac
+selectCodeEditor("cpu.v", 803, 203); // ac
+selectCodeEditor("cpu.v", 803, 203, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 626, 191); // ac
+// Elapsed time: 12 seconds
+selectCodeEditor("cpu.v", 764, 733); // ac
+selectCodeEditor("cpu.v", 764, 733, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 283, 602); // ac
+selectCodeEditor("cpu.v", 283, 602, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 305, 601); // ac
+selectCodeEditor("cpu.v", 305, 601, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 627, 637); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 293, 706); // ac
+selectCodeEditor("cpu.v", 293, 706, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 324, 832); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 402, 847); // ac
+selectCodeEditor("cpu.v", 402, 847, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 546, 858); // ac
+selectCodeEditor("cpu.v", 546, 858, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 731, 849); // ac
+selectCodeEditor("cpu.v", 731, 849, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 493, 415); // ac
+selectCodeEditor("cpu.v", 493, 415, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("cpu.v", 287, 450); // ac
+selectCodeEditor("cpu.v", 287, 450, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 287, 450); // ac
+selectCodeEditor("cpu.v", 317, 485); // ac
+selectCodeEditor("cpu.v", 305, 605); // ac
+selectCodeEditor("cpu.v", 305, 605, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 278, 700); // ac
+selectCodeEditor("cpu.v", 274, 711); // ac
+selectCodeEditor("cpu.v", 274, 711, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 359, 277); // ac
+// Elapsed time: 12 seconds
+selectCodeEditor("cpu.v", 286, 135); // ac
+selectCodeEditor("cpu.v", 286, 135, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("cpu.v", 277, 86); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 300, 132); // ac
+selectCodeEditor("cpu.v", 300, 132, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 208, 411); // ac
+// Elapsed time: 29 seconds
+selectCodeEditor("cpu.v", 330, 373); // ac
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 251, 450); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 285, 459); // ac
+selectCodeEditor("cpu.v", 285, 459, false, false, false, false, true); // ac - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 258, 449); // ac
+selectCodeEditor("cpu.v", 258, 449, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 229, 459); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectCodeEditor("cpu.v", 246, 454); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 377, 423); // ac
+selectCodeEditor("cpu.v", 270, 460); // ac
+selectCodeEditor("cpu.v", 270, 460, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cu.v", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux2.v", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cu.v", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectCodeEditor("cpu.v", 531, 311); // ac
+selectCodeEditor("cpu.v", 625, 305); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 654, 300); // ac
+selectCodeEditor("cpu.v", 654, 300, false, false, false, false, true); // ac - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cu.v", 4); // o
+selectCodeEditor("cu.v", 932, 718); // ac
+selectCodeEditor("cu.v", 940, 718); // ac
+selectCodeEditor("cu.v", 946, 724); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cu.v", 432, 735); // ac
+selectCodeEditor("cu.v", 432, 735, false, false, false, false, true); // ac - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux2.v", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectCodeEditor("cpu.v", 692, 357); // ac
+selectCodeEditor("cpu.v", 680, 295); // ac
+selectCodeEditor("cpu.v", 680, 295, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 310, 780); // ac
+selectCodeEditor("cpu.v", 281, 807); // ac
+// Elapsed time: 22 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux2.v", 1); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "pc_add.v", 3); // o
+selectCodeEditor("pc_add.v", 160, 169); // ac
+selectCodeEditor("pc_add.v", 160, 169, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("pc_add.v", 319, 495); // ac
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a
+setFileChooser("D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/Add.v");
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 9 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: add_files -norecurse D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/Add.v 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, add (Add.v)]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, add (Add.v)]", 4, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("Add.v", 101, 130); // ac
+selectCodeEditor("Add.v", 101, 130, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "simcpu.v", 0); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Add.v", 5); // o
+selectCodeEditor("Add.v", 304, 206); // ac
+selectCodeEditor("Add.v", 249, 201); // ac
+selectCodeEditor("Add.v", 264, 164); // ac
+selectCodeEditor("Add.v", 264, 164, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'c'); // ac
+selectCodeEditor("Add.v", 264, 191); // ac
+selectCodeEditor("Add.v", 264, 191, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'v'); // ac
+typeControlKey(null, null, 'z');
+selectCodeEditor("Add.v", 263, 271); // ac
+selectCodeEditor("Add.v", 263, 270, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'c'); // ac
+selectCodeEditor("Add.v", 271, 138); // ac
+selectCodeEditor("Add.v", 271, 162); // ac
+selectCodeEditor("Add.v", 271, 162, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Add.v", 396, 169); // ac
+selectCodeEditor("Add.v", 396, 169, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("Add.v", 190, 281); // ac
+selectCodeEditor("Add.v", 180, 320); // ac
+selectCodeEditor("Add.v", 170, 352); // ac
+typeControlKey((HResource) null, "Add.v", 'v'); // ac
+selectCodeEditor("Add.v", 299, 384); // ac
+selectCodeEditor("Add.v", 184, 384); // ac
+selectCodeEditor("Add.v", 184, 384, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("Add.v", 274, 336); // ac
+selectCodeEditor("Add.v", 388, 205); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Add.v", 316, 276); // ac
+selectCodeEditor("Add.v", 168, 389); // ac
+selectCodeEditor("Add.v", 168, 389, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'c'); // ac
+selectCodeEditor("Add.v", 397, 280); // ac
+selectCodeEditor("Add.v", 397, 280, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Add.v", 394, 163); // ac
+selectCodeEditor("Add.v", 394, 163, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("Add.v", 382, 167); // ac
+selectCodeEditor("Add.v", 382, 167, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'c'); // ac
+selectCodeEditor("Add.v", 275, 382); // ac
+selectCodeEditor("Add.v", 275, 382, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Add.v", 177, 287); // ac
+selectCodeEditor("Add.v", 177, 287, false, false, false, false, true); // ac - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Add.v", 109, 119); // ac
+selectCodeEditor("Add.v", 109, 119, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+// Elapsed time: 10 seconds
+selectCodeEditor("cpu.v", 230, 808); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Add.v", 5); // o
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Add.v", 5); // o
+selectCodeEditor("Add.v", 406, 264); // ac
+selectCodeEditor("Add.v", 406, 264, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "Add.v", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 696, 738); // ac
+selectCodeEditor("cpu.v", 696, 738, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 144, 842); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 136, 844); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Add.v", 5); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectCodeEditor("cpu.v", 348, 847); // ac
+selectCodeEditor("cpu.v", 651, 307); // ac
+selectCodeEditor("cpu.v", 651, 307, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 345, 847); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectCodeEditor("cpu.v", 557, 1067); // ac
+selectCodeEditor("cpu.v", 557, 1067, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 368, 384); // ac
+selectCodeEditor("cpu.v", 278, 300); // ac
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 120, 365); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 130, 380); // ac
+selectCodeEditor("cpu.v", 306, 372); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectCodeEditor("cpu.v", 346, 776); // ac
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 117, 839); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+selectCodeEditor("cpu.v", 524, 980); // ac
+selectCodeEditor("cpu.v", 524, 980, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 260, 842); // ac
+selectCodeEditor("cpu.v", 260, 842, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 10 seconds
+selectCodeEditor("cpu.v", 275, 840); // ac
+selectCodeEditor("cpu.v", 275, 840, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 600, 869); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 668, 898); // ac
+selectCodeEditor("cpu.v", 667, 885); // ac
+selectCodeEditor("cpu.v", 667, 885, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "cpu.v", 'c'); // ac
+selectCodeEditor("cpu.v", 155, 80); // ac
+typeControlKey((HResource) null, "cpu.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("cpu.v", 531, 93); // ac
+selectCodeEditor("cpu.v", 531, 93, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("cpu.v", 632, 230); // ac
+selectCodeEditor("cpu.v", 620, 174); // ac
+// Elapsed time: 13 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu (cpu.v)]", 2); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu (cpu.v), IR : insReg (insreg.v)]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, cpu (cpu.v), IR : insReg (insreg.v)]", 6, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("insreg.v", 1018, 566); // ac
+selectCodeEditor("insreg.v", 1052, 475); // ac
+selectCodeEditor("insreg.v", 1000, 552); // ac
+selectCodeEditor("insreg.v", 1033, 520); // ac
+selectCodeEditor("insreg.v", 1033, 520); // ac
+// Elapsed time: 32 seconds
+selectCodeEditor("insreg.v", 302, 557); // ac
+selectCodeEditor("insreg.v", 1089, 517); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "cpu.v", 2); // o
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: RUN_MODIFY
+dismissDialog("Run Synthesis"); // u
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/utils_1/imports/synth_1/cpu.dcp with file D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/cpu.dcp 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 6 
+// Tcl Message: [Sat Dec 23 21:41:09 2023] Launched synth_1... Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// Elapsed time: 38 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 6 
+// Tcl Message: [Sat Dec 23 21:41:47 2023] Launched impl_1... Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/impl_1/runme.log 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 20 seconds
+selectCodeEditor("cpu.v", 208, 89); // ac
+selectCodeEditor("cpu.v", 208, 89, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 14 seconds
+selectCodeEditor("cpu.v", 1220, 161); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 16 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Implementation Completed"); // S.a
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // f
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+selectButton("OptionPane.button", "Yes"); // JButton
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+dismissDialog("Close"); // bq
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-12493] Simulation top is 'simcpu' 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0' INFO: [SIM-utils-54] Inspecting design source files for 'simcpu' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj simcpu_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot simcpu_behav xil_defaultlib.simcpu xil_defaultlib.glbl -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "simcpu_behav -key {Behavioral:sim_1:Functional:simcpu} -tclbatch {simcpu.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,196 MB. GUI used memory: 105 MB. Current time: 12/23/23, 9:42:50 PM CST
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: source simcpu.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// Tcl Message: $stop called at time : 165 ns : File "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" Line 9 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'simcpu_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.133 ; gain = 0.000 
+// 'd' command handler elapsed time: 9 seconds
+dismissDialog("Run Simulation"); // e
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 3", 7); // o
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "CPU ; cpu ; Verilog Module", 1, "CPU", 0, true); // c - Node
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "PC ; pc ; Verilog Module", 2, "pc", 1, false); // c
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "pc[31:0] ; XXXXXXXX ; Array", 5, "pc[31:0]", 0, true); // c - Node
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "pc_bus_o[31:0] ; XXXXXXXX ; Array", 4, "pc_bus_o[31:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "pc_bus_o[31:0] ; XXXXXXXX ; Array", 4, "pc_bus_o[31:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "pc_set[31:0] ; XXXXXXXX ; Array", 3, "pc_set[31:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "pc_bus_o[31:0] ; XXXXXXXX ; Array", 4, "pc_bus_o[31:0]", 0, true); // c - Node
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "pc_set[31:0] ; XXXXXXXX ; Array", 3, "pc_set[31:0]", 0, true); // c - Node
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "pc[31:0] ; XXXXXXXX ; Array", 5, "pc[31:0]", 0, true); // c - Node
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "ADD_MUX ; mux2 ; Verilog Module", 3, "mux2", 1, false); // c
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "PC_ADD ; pc_add ; Verilog Module", 4, "pc_add", 1, false); // c
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "PC_ADD ; pc_add ; Verilog Module", 4, "pc_add", 1, false); // c
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "IR ; insReg ; Verilog Module", 5, "insReg", 1, false); // c
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "IR ; insReg ; Verilog Module", 5, "insReg", 1, false); // c
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,196 MB. GUI used memory: 103 MB. Current time: 12/23/23, 9:43:13 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "IDU ; cu ; Verilog Module", 6, "cu", 1, false); // c
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "wreg_o ; 0 ; Logic", 9, "wreg_o", 0, false, false, true, false, false, false); // c - Control Key
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "wd_o[4:0] ; 00 ; Array", 8, "wd_o[4:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "wd_o[4:0] ; 00 ; Array", 8, "wd_o[4:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "reg2_o[31:0] ; 00000000 ; Array", 7, "reg2_o[31:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "reg1_o[31:0] ; 00000000 ; Array", 6, "reg1_o[31:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "funct3[2:0] ; X ; Array", 5, "funct3[2:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "aluop_o[7:0] ; 00 ; Array", 3, "aluop_o[7:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "source_regs[9:0] ; 000 ; Array", 2, "source_regs[9:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "stop ; 0 ; Logic", 1, "stop", 0, false, false, true, false, false, false); // c - Control Key
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "j_type ; X ; Logic", 0, "j_type", 0, false, false, true, false, false, false); // c - Control Key
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "stop ; 0 ; Logic", 4, "stop", 0, false); // c
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "wreg_o ; 0 ; Logic", 8, "wreg_o", 0, false); // c
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "wd_o[4:0] ; 00 ; Array", 7, "wd_o[4:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "reg2_o[31:0] ; 00000000 ; Array", 6, "reg2_o[31:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "reg1_o[31:0] ; 00000000 ; Array", 5, "reg1_o[31:0]", 0, true, false, true, false, false, false); // c - Control Key - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "wreg_o ; 0 ; Logic", 8, "wreg_o", 0, false); // c
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "GPR ; regfile ; Verilog Module", 7, "Verilog Module", 2, false); // c
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "EX_MUX ; mux2 ; Verilog Module", 8, "mux2", 1, false); // c
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "EX_MUX ; mux2 ; Verilog Module", 8, "mux2", 1, false); // c
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "EX_ADD ; add ; Verilog Module", 9, "add", 1, false); // c
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "EX_ADD ; add ; Verilog Module", 9, "add", 1, false); // c
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // B
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_MODEL_RELOADED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: relaunch_sim 
+// Tcl Message: Command: launch_simulation -step compile -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-12493] Simulation top is 'simcpu' 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj simcpu_vlog.prj" 
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds 
+// Tcl Message: Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral 
+// Tcl Message: INFO: [Vivado 12-12493] Simulation top is 'simcpu' 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot simcpu_behav xil_defaultlib.simcpu xil_defaultlib.glbl -log elaborate.log" 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_MODEL_RELOADED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_DELETE_ALL_BREAKPOINTS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MOVE_CURSOR
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_STOPPED
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: Time resolution is 1 ps $stop called at time : 165 ns : File "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" Line 9 relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.133 ; gain = 0.000 
+// 'a' command handler elapsed time: 6 seconds
+dismissDialog("Relaunch Simulation"); // b
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "insreg.v", 6); // o
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // E
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "CPU ; cpu ; Verilog Module", 1, "CPU", 0, true); // c - Node
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "GPR ; regfile ; Verilog Module", 7, "regfile", 1, false); // c
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "reg_valid[31:0] ; 00000001 ; Array", 13, "reg_valid[31:0]", 0, true); // c - Node
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "regs[0:31][31:0] ; 00000000,00000001,00000003,00000008,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX ; Array", 12, "regs[0:31][31:0]", 0, true); // c - Node
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,196 MB. GUI used memory: 103 MB. Current time: 12/23/23, 9:44:02 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTreeTable(PAResourceQtoS.SimulationObjectsPanel_SIMULATION_OBJECTS_TREE_TABLE, "regs[0:31][31:0] ; 00000000,00000001,00000003,00000008,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX ; Array", 12, "regs[0:31][31:0]", 0, true); // c - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // B
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE

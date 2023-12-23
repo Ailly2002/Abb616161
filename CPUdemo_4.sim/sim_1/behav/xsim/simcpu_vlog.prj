@@ -1,5 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../CPUdemo_4.srcs/sources_1/new/Add.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/alu.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/clk_use.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/cpu.v" \
