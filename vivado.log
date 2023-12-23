@@ -2,10 +2,10 @@
 # Vivado v2022.2.2 (64-bit)
 # SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
 # IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
-# Start of session at: Sat Dec 23 18:15:52 2023
-# Process ID: 27980
+# Start of session at: Sat Dec 23 19:28:58 2023
+# Process ID: 22672
 # Current directory: D:/FPGAdemo/CPUdemo_4
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22840 D:\FPGAdemo\CPUdemo_4\CPUdemo_4.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11080 D:\FPGAdemo\CPUdemo_4\CPUdemo_4.xpr
 # Log file: D:/FPGAdemo/CPUdemo_4/vivado.log
 # Journal file: D:/FPGAdemo/CPUdemo_4\vivado.jou
 # Running On: LAPTOP-T2VDSBIN, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 12, Host memory: 14888 MB
@@ -64,16 +64,8 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2022.2/data/ip'.
-open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 1125.570 ; gain = 274.531
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 1144.879 ; gain = 312.949
 update_compile_order -fileset sources_1
-reset_run synth_1
-INFO: [Project 1-1161] Replacing file D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/utils_1/imports/synth_1/cpu.dcp with file D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/cpu.dcp
-launch_runs synth_1 -jobs 6
-[Sat Dec 23 18:18:38 2023] Launched synth_1...
-Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 6
-[Sat Dec 23 18:19:19 2023] Launched impl_1...
-Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/impl_1/runme.log
 launch_simulation
 Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'simcpu'
@@ -104,6 +96,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.src
 INFO: [VRFC 10-311] analyzing module insReg
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_add
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module wbu
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" into library xil_defaultlib
@@ -118,10 +112,11 @@ Running: D:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'seg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:88]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'pc_next' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:56]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'seg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:92]
 WARNING: [VRFC 10-5021] port 'go' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v:11]
-WARNING: [VRFC 10-5021] port 'uct' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:51]
-WARNING: [VRFC 10-5021] port 'alusel_i' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:72]
+WARNING: [VRFC 10-5021] port 'stop' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:52]
+WARNING: [VRFC 10-5021] port 'alusel_i' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:76]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
@@ -129,6 +124,7 @@ WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/gl
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.pc
+Compiling module xil_defaultlib.pc_add
 Compiling module xil_defaultlib.insReg
 Compiling module xil_defaultlib.cu
 Compiling module xil_defaultlib.regfile
@@ -140,7 +136,7 @@ Compiling module xil_defaultlib.cpu
 Compiling module xil_defaultlib.simcpu
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot simcpu_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
@@ -158,11 +154,331 @@ source simcpu.tcl
 #   }
 # }
 # run 1000ns
-$stop called at time : 165 ns : File "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" Line 8
+FATAL_ERROR: Iteration limit 10000 is reached. Possible zero delay oscillation detected where simulation time can not advance. Please check your source code. Note that the iteration limit can be changed using switch -maxdeltaid.
+Time: 0 ps  Iteration: 10000
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'simcpu_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1209.180 ; gain = 38.023
-WARNING: [Wavedata 42-489] Can't add object "/simcpu/cpu/IR/unit" to the wave window because it has 131104 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1192.492 ; gain = 23.320
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/utils_1/imports/synth_1/cpu.dcp with file D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/cpu.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1
+
+launch_runs synth_1 -jobs 6
+[Sat Dec 23 19:33:42 2023] Launched synth_1...
+Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 6
+[Sat Dec 23 19:34:56 2023] Launched impl_1...
+Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/impl_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'simcpu'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'simcpu' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj simcpu_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_use
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module digit_tubes
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module insReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wbu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module simcpu
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot simcpu_behav xil_defaultlib.simcpu xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot simcpu_behav xil_defaultlib.simcpu xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'seg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:92]
+WARNING: [VRFC 10-5021] port 'stop' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:52]
+WARNING: [VRFC 10-5021] port 'alusel_i' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:76]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.pc
+Compiling module xil_defaultlib.pc_add
+Compiling module xil_defaultlib.insReg
+Compiling module xil_defaultlib.cu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.wbu
+Compiling module xil_defaultlib.clk_use
+Compiling module xil_defaultlib.digit_tubes
+Compiling module xil_defaultlib.cpu
+Compiling module xil_defaultlib.simcpu
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot simcpu_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "simcpu_behav -key {Behavioral:sim_1:Functional:simcpu} -tclbatch {simcpu.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source simcpu.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+FATAL_ERROR: Iteration limit 10000 is reached. Possible zero delay oscillation detected where simulation time can not advance. Please check your source code. Note that the iteration limit can be changed using switch -maxdeltaid.
+Time: 0 ps  Iteration: 10000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'simcpu_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1196.875 ; gain = 0.000
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/utils_1/imports/synth_1/cpu.dcp with file D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/cpu.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1
+
+launch_runs synth_1 -jobs 6
+[Sat Dec 23 19:37:47 2023] Launched synth_1...
+Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 6
+[Sat Dec 23 19:38:57 2023] Launched impl_1...
+Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/impl_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'simcpu'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'simcpu' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj simcpu_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_use
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module digit_tubes
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module insReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wbu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module simcpu
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot simcpu_behav xil_defaultlib.simcpu xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot simcpu_behav xil_defaultlib.simcpu xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'seg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:92]
+WARNING: [VRFC 10-5021] port 'stop' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:52]
+WARNING: [VRFC 10-5021] port 'alusel_i' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:76]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.pc
+Compiling module xil_defaultlib.pc_add
+Compiling module xil_defaultlib.insReg
+Compiling module xil_defaultlib.cu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.wbu
+Compiling module xil_defaultlib.clk_use
+Compiling module xil_defaultlib.digit_tubes
+Compiling module xil_defaultlib.cpu
+Compiling module xil_defaultlib.simcpu
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot simcpu_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "simcpu_behav -key {Behavioral:sim_1:Functional:simcpu} -tclbatch {simcpu.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source simcpu.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+FATAL_ERROR: Iteration limit 10000 is reached. Possible zero delay oscillation detected where simulation time can not advance. Please check your source code. Note that the iteration limit can be changed using switch -maxdeltaid.
+Time: 0 ps  Iteration: 10000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'simcpu_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1196.875 ; gain = 0.000
+run all
+ERROR: [Simulator 45-1] A fatal run-time error was detected.  Simulation cannot continue.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/utils_1/imports/synth_1/cpu.dcp with file D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/cpu.dcp
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1
+
+launch_runs synth_1 -jobs 6
+[Sat Dec 23 19:48:46 2023] Launched synth_1...
+Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1
+
+launch_runs synth_1 -jobs 6
+[Sat Dec 23 19:49:11 2023] Launched synth_1...
+Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 6
+[Sat Dec 23 19:50:00 2023] Launched impl_1...
+Run output will be captured here: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/impl_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'simcpu'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'simcpu' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj simcpu_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_use
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module digit_tubes
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module insReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wbu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module simcpu
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot simcpu_behav xil_defaultlib.simcpu xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot simcpu_behav xil_defaultlib.simcpu xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'seg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:92]
+WARNING: [VRFC 10-5021] port 'alusel_i' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:76]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.pc
+Compiling module xil_defaultlib.pc_add
+Compiling module xil_defaultlib.insReg
+Compiling module xil_defaultlib.cu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.wbu
+Compiling module xil_defaultlib.clk_use
+Compiling module xil_defaultlib.digit_tubes
+Compiling module xil_defaultlib.cpu
+Compiling module xil_defaultlib.simcpu
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot simcpu_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "simcpu_behav -key {Behavioral:sim_1:Functional:simcpu} -tclbatch {simcpu.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source simcpu.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$stop called at time : 165 ns : File "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" Line 9
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'simcpu_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1222.543 ; gain = 6.176
+WARNING: [Wavedata 42-489] Can't add object "/simcpu/CPU/IR/unit" to the wave window because it has 131104 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
 relaunch_sim
 Command: launch_simulation -step compile -simset sim_1 -mode behavioral
 INFO: [Vivado 12-12493] Simulation top is 'simcpu'
@@ -193,6 +509,81 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.src
 INFO: [VRFC 10-311] analyzing module insReg
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wbu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module simcpu
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'simcpu'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot simcpu_behav xil_defaultlib.simcpu xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot simcpu_behav xil_defaultlib.simcpu xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'seg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:92]
+WARNING: [VRFC 10-5021] port 'alusel_i' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:76]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.pc
+Compiling module xil_defaultlib.pc_add
+Compiling module xil_defaultlib.insReg
+Compiling module xil_defaultlib.cu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.wbu
+Compiling module xil_defaultlib.clk_use
+Compiling module xil_defaultlib.digit_tubes
+Compiling module xil_defaultlib.cpu
+Compiling module xil_defaultlib.simcpu
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot simcpu_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+$stop called at time : 165 ns : File "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" Line 9
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1223.586 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'simcpu'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj simcpu_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_use
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module digit_tubes
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module insReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_add
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module wbu
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" into library xil_defaultlib
@@ -213,10 +604,8 @@ Running: D:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'seg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:88]
-WARNING: [VRFC 10-5021] port 'go' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v:11]
-WARNING: [VRFC 10-5021] port 'uct' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:51]
-WARNING: [VRFC 10-5021] port 'alusel_i' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:72]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'seg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:92]
+WARNING: [VRFC 10-5021] port 'alusel_i' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:76]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
@@ -224,6 +613,7 @@ WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/gl
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.pc
+Compiling module xil_defaultlib.pc_add
 Compiling module xil_defaultlib.insReg
 Compiling module xil_defaultlib.cu
 Compiling module xil_defaultlib.regfile
@@ -237,5 +627,5 @@ Compiling module xil_defaultlib.glbl
 Built simulation snapshot simcpu_behav
 INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
 Time resolution is 1 ps
-$stop called at time : 165 ns : File "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" Line 8
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1209.180 ; gain = 0.000
+$stop called at time : 165 ns : File "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" Line 9
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1279.824 ; gain = 0.000

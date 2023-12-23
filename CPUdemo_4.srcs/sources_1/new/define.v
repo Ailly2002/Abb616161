@@ -18,8 +18,8 @@
 `define IMM_U_BUS 31:12
 `define IMM_U_SIZE 20
 
-`define Stall 1'b1          
-`define unStall 1'b0         
+`define Stall 1'b1              //Stop信号使能
+`define unStall 1'b0            //Stop信号除能
 `define RstEnable 1'b1          //复位使能
 `define RstDisable 1'b0         //复位除能
 `define WriteEnable 1'b1        //写使能
@@ -42,7 +42,7 @@
 `define LOAD    7'b0000111
 `define STORE   7'b0001000
 
-//******非指令集内容，具体未确定
+
 `define AluOpBus 7:0            //译码阶段输出操作子类型数据宽度
 `define AluSelBus 2:0           //译码阶段输出操作类型数据宽度
 //******

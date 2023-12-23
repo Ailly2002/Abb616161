@@ -12,8 +12,9 @@ module cpu(
     wire [`InstBus] ins;//32位指令读出
     wire [15:0] in1, in2, Z;
     wire stall;
-    wire[`ADDR_BUS]        rom_addr;//PC模块地址线
-    wire[`ADDR_BUS]        ir_idpc;//ID段获取pc地址的旁路通道
+    wire[`ADDR_BUS]         pc_bus;//PC模块地址线
+    wire[`ADDR_BUS]         pc_i;
+    wire[`ADDR_BUS]         ir_idpc;//ID段获取pc地址的通道
     //连接ID模块和EX模块
     wire[`AluOpBus] id_aluop;
     wire[6:0] id_alufuns;
@@ -49,10 +50,13 @@ module cpu(
 
 //****取指令****
     pc PC(
-        .clk(clk), .rst(rst), .stop(stop), .ct(ct),.pc(rom_addr)
+        .clk(clk), .rst(rst), .ct(ct),.pc_set(pc_i),.pc_bus_o(pc_bus)
         );//偏移字段有干涉，待修改
+    pc_add PC_ADD(
+        .pc_dr(pc_bus),.stop(stop),.pc_next(pc_i)
+        );
     insReg IR(
-        .addr(rom_addr),.Ins(ins),.pcaddr(ir_idpc)
+        .addr(pc_bus),.Ins(ins),.pcaddr(ir_idpc)
         );
 
 //****译码****

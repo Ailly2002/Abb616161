@@ -22,17 +22,43 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 17128
+INFO: [Synth 8-7075] Helper process launched with PID 5368
+
+*** Running vivado
+    with args -log cpu.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu.tcl
+
+
+
+****** Vivado v2022.2.2 (64-bit)
+  **** SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
+  **** IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
+    ** Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+
+source cpu.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/utils_1/imports/synth_1/cpu.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/utils_1/imports/synth_1/cpu.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top cpu -part xc7a35tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 22932
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
-INFO: [Synth 8-11241] undeclared symbol 'num', assumed default net type 'wire' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:88]
+INFO: [Synth 8-11241] undeclared symbol 'num', assumed default net type 'wire' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:92]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1210.184 ; gain = 410.410
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1208.984 ; gain = 409.691
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'cpu' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:2]
 INFO: [Synth 8-6157] synthesizing module 'pc' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'pc' (0#1) [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v:3]
-WARNING: [Synth 8-7071] port 'uct' of module 'pc' is unconnected for instance 'PC' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:51]
-WARNING: [Synth 8-7023] instance 'PC' of module 'pc' has 6 connections declared, but only 5 given [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:51]
+INFO: [Synth 8-6157] synthesizing module 'pc_add' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v:2]
+WARNING: [Synth 8-6090] variable 'pc' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'pc_add' (0#1) [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v:2]
 INFO: [Synth 8-6157] synthesizing module 'insReg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'insReg' (0#1) [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v:3]
 INFO: [Synth 8-6157] synthesizing module 'cu' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:3]
@@ -40,16 +66,16 @@ WARNING: [Synth 8-6090] variable 'imm12' is written by both blocking and non-blo
 WARNING: [Synth 8-6090] variable 'imm12' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:149]
 WARNING: [Synth 8-6090] variable 'imm12' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:172]
 INFO: [Synth 8-6155] done synthesizing module 'cu' (0#1) [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:3]
-WARNING: [Synth 8-7071] port 'pcadd_o' of module 'cu' is unconnected for instance 'IDU' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:59]
-WARNING: [Synth 8-7023] instance 'IDU' of module 'cu' has 22 connections declared, but only 21 given [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:59]
+WARNING: [Synth 8-7071] port 'pcadd_o' of module 'cu' is unconnected for instance 'IDU' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:63]
+WARNING: [Synth 8-7023] instance 'IDU' of module 'cu' has 22 connections declared, but only 21 given [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:63]
 INFO: [Synth 8-6157] synthesizing module 'regfile' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v:2]
 WARNING: [Synth 8-567] referenced signal 'regs' should be on the sensitivity list [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v:41]
 INFO: [Synth 8-6155] done synthesizing module 'regfile' (0#1) [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v:2]
 INFO: [Synth 8-6157] synthesizing module 'alu' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v:3]
 INFO: [Synth 8-155] case statement is not full and has no default [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v:51]
 INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v:3]
-WARNING: [Synth 8-7071] port 'alusel_i' of module 'alu' is unconnected for instance 'ALU' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:72]
-WARNING: [Synth 8-7023] instance 'ALU' of module 'alu' has 16 connections declared, but only 15 given [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:72]
+WARNING: [Synth 8-7071] port 'alusel_i' of module 'alu' is unconnected for instance 'ALU' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:76]
+WARNING: [Synth 8-7023] instance 'ALU' of module 'alu' has 16 connections declared, but only 15 given [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:76]
 INFO: [Synth 8-6157] synthesizing module 'wbu' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'wbu' (0#1) [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v:3]
 INFO: [Synth 8-6157] synthesizing module 'clk_use' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v:1]
@@ -57,8 +83,8 @@ INFO: [Synth 8-6155] done synthesizing module 'clk_use' (0#1) [D:/FPGAdemo/CPUde
 INFO: [Synth 8-6157] synthesizing module 'digit_tubes' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v:2]
 INFO: [Synth 8-226] default block is never used [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v:42]
 INFO: [Synth 8-6155] done synthesizing module 'digit_tubes' (0#1) [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v:2]
-WARNING: [Synth 8-689] width (1) of port connection 'seg' does not match port width (8) of module 'digit_tubes' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:88]
-WARNING: [Synth 8-689] width (8) of port connection 'an' does not match port width (4) of module 'digit_tubes' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:88]
+WARNING: [Synth 8-689] width (1) of port connection 'seg' does not match port width (8) of module 'digit_tubes' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:92]
+WARNING: [Synth 8-689] width (8) of port connection 'an' does not match port width (4) of module 'digit_tubes' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:92]
 INFO: [Synth 8-6155] done synthesizing module 'cpu' (0#1) [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:2]
 WARNING: [Synth 8-6014] Unused sequential element instvalid_reg was removed.  [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:89]
 WARNING: [Synth 8-3848] Net pcadd_o in module/entity cu does not have driver. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:23]
@@ -104,7 +130,6 @@ WARNING: [Synth 8-7129] Port pcadd_o[2] in module cu is either unconnected or ha
 WARNING: [Synth 8-7129] Port pcadd_o[1] in module cu is either unconnected or has no load
 WARNING: [Synth 8-7129] Port pcadd_o[0] in module cu is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ct in module pc is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uct in module pc is either unconnected or has no load
 WARNING: [Synth 8-7129] Port seg[7] in module cpu is either unconnected or has no load
 WARNING: [Synth 8-7129] Port seg[6] in module cpu is either unconnected or has no load
 WARNING: [Synth 8-7129] Port seg[5] in module cpu is either unconnected or has no load
@@ -114,39 +139,24 @@ WARNING: [Synth 8-7129] Port seg[2] in module cpu is either unconnected or has n
 WARNING: [Synth 8-7129] Port seg[1] in module cpu is either unconnected or has no load
 WARNING: [Synth 8-7129] Port seg[0] in module cpu is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1307.246 ; gain = 507.473
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1306.531 ; gain = 507.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1307.246 ; gain = 507.473
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1306.531 ; gain = 507.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1307.246 ; gain = 507.473
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1306.531 ; gain = 507.238
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1307.246 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1306.531 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc]
 CRITICAL WARNING: [Designutils 20-1307] Command '/////////////////////////////////////5个按键//////////////////////////////////////' is not supported in the xdc constraint file. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:6]
-WARNING: [Vivado 12-584] No ports matched 'btn_pin[0]'. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:7]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:7]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn_pin[1]'. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:8]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:8]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn_pin[2]'. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:9]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:9]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn_pin[3]'. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:10]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:10]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn_pin[4]'. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:11]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:11]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 CRITICAL WARNING: [Designutils 20-1307] Command '///////////////////////////////////拨码开关sw0~sw7////////////////////////////////' is not supported in the xdc constraint file. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:13]
 WARNING: [Vivado 12-584] No ports matched 'sw_pin[0]'. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:14]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/constrs_1/new/EGo1.xdc:14]
@@ -222,54 +232,56 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/cpu_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1416.941 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1362.859 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1416.941 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1362.859 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'pc_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v:15]
+WARNING: [Synth 8-327] inferring latch for variable 'halt_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v:17]
 WARNING: [Synth 8-327] inferring latch for variable 'reg_valid_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v:60]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   32 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 3     
 	   3 Input   32 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 37    
+	               32 Bit    Registers := 38    
 	               10 Bit    Registers := 3     
 	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 1     
 	                5 Bit    Registers := 5     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
+	                1 Bit    Registers := 6     
 +---Muxes : 
+	   2 Input   32 Bit        Muxes := 18    
 	   6 Input   32 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 17    
 	   4 Input   32 Bit        Muxes := 1     
 	   2 Input   10 Bit        Muxes := 2     
 	   8 Input   10 Bit        Muxes := 1     
@@ -315,6 +327,39 @@ WARNING: [Synth 8-7129] Port seg[3] in module cpu is either unconnected or has n
 WARNING: [Synth 8-7129] Port seg[2] in module cpu is either unconnected or has no load
 WARNING: [Synth 8-7129] Port seg[1] in module cpu is either unconnected or has no load
 WARNING: [Synth 8-7129] Port seg[0] in module cpu is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[31]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[30]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[29]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[28]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[27]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[26]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[25]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[24]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[23]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[22]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[21]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[20]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[19]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[18]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[17]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[16]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[15]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[14]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[13]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[12]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[11]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[10]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[9]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[8]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[7]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[6]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[5]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[4]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[3]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[2]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[1]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/pc_reg[0]) is unused and will be removed from module cpu.
+WARNING: [Synth 8-3332] Sequential element (PC_ADD/halt_reg) is unused and will be removed from module cpu.
 WARNING: [Synth 8-3332] Sequential element (reg_valid_reg[31]) is unused and will be removed from module regfile.
 WARNING: [Synth 8-3332] Sequential element (reg_valid_reg[30]) is unused and will be removed from module regfile.
 WARNING: [Synth 8-3332] Sequential element (reg_valid_reg[29]) is unused and will be removed from module regfile.
@@ -348,25 +393,25 @@ WARNING: [Synth 8-3332] Sequential element (reg_valid_reg[2]) is unused and will
 WARNING: [Synth 8-3332] Sequential element (reg_valid_reg[1]) is unused and will be removed from module regfile.
 WARNING: [Synth 8-3332] Sequential element (reg_valid_reg[0]) is unused and will be removed from module regfile.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -384,37 +429,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -445,27 +490,27 @@ Report Cell Usage:
 |13    |OBUFT  |     8|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1362.859 ; gain = 563.566
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 49 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1416.941 ; gain = 507.473
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1416.941 ; gain = 617.168
+Synthesis finished with 0 errors, 0 critical warnings and 84 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1362.859 ; gain = 507.238
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1362.859 ; gain = 563.566
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1416.941 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1362.859 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1416.941 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1362.859 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete, checksum: d4e0fb1f
 INFO: [Common 17-83] Releasing license: Synthesis
-44 Infos, 141 Warnings, 32 Critical Warnings and 0 Errors encountered.
+46 Infos, 169 Warnings, 27 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1416.941 ; gain = 995.754
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1362.859 ; gain = 942.355
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/cpu.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_utilization_synth.rpt -pb cpu_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Dec 23 18:19:14 2023...
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 23 19:49:51 2023...
