@@ -79,7 +79,7 @@ module cu(
                         wd_o   =  inst[11:7];
                             //在所有格式中，RISC-V ISA将源寄存器（rs1和rs2）和目标寄存器（rd）固定在同样的位置，以简化指令译码
                             if(valid_bit[reg1_addr] && valid_bit[reg2_addr] && valid_bit[wd_o]) begin//检查记分牌
-                                stop <= 1;
+                                stop <= `unStall;
                                 aluop_o <= operate;
                                 wreg_o  <=  `WriteEnable;
                                 reg1_read <= `ReadEnable;
@@ -89,7 +89,7 @@ module cu(
                                 instvalid   =  `InstValid;//指令有效
                             end
                             else begin
-                                stop <= 0;
+                                stop <= `Stall;
                                 aluop_o <= 7'b0000000;
                                 wreg_o  <=  `WriteDisable;
                                 reg1_read <= `ReadDisable;
@@ -105,7 +105,7 @@ module cu(
                         reg1_addr=inst[19:15];
                         wd_o   =  inst[11:7];
                             if(valid_bit[reg1_addr] && valid_bit[wd_o]) begin//检查记分牌
-                                stop <= 1;
+                                stop <= `unStall;
                                 aluop_o <= operate;
                                 wreg_o  <=  `WriteEnable;
                                 reg1_read <= `ReadEnable;
@@ -115,7 +115,7 @@ module cu(
                                 instvalid   =  `InstValid;
                             end 
                             else begin//NOP
-                                stop <= 0;
+                                stop <= `Stall;
                                 aluop_o <= 7'b0000000;
                                 wreg_o  <=  `WriteDisable;
                                 reg1_read <= `ReadEnable;
@@ -131,7 +131,7 @@ module cu(
                         reg1_addr=inst[11:7];
                         wd_o   =  inst[11:7];
                         if(valid_bit[reg1_addr] && valid_bit[wd_o]) begin//检查记分牌
-                                stop <= 1;
+                                stop <= `unStall;
                                 aluop_o <= operate;
                                 wreg_o  <=  `WriteEnable;
                                 reg1_read <= `ReadDisable;
@@ -139,7 +139,7 @@ module cu(
                                 instvalid   =  `InstValid;
                         end
                         else begin//NOP
-                                stop <= 0;
+                                stop <= `Stall;
                                 aluop_o <= 7'b0000000;
                                 wreg_o  <=  `WriteDisable;
                                 reg1_read <= `ReadEnable;
@@ -154,7 +154,7 @@ module cu(
                     `AUIPC:begin
                             wd_o   =  inst[11:7];
                             if(valid_bit[wd_o]) begin//检查记分牌
-                                stop <= 1;
+                                stop <= `unStall;
                                 aluop_o <= operate;
                                 wreg_o  <=  `WriteEnable;
                                 reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
@@ -162,7 +162,7 @@ module cu(
                                 instvalid   =  `InstValid;
                             end
                             else begin//NOP
-                                stop <= 0;
+                                stop <= `Stall;
                                 aluop_o <= 7'b0000000;
                                 wreg_o  <=  `WriteDisable;
                                 reg1_read <= `ReadEnable;
@@ -177,7 +177,7 @@ module cu(
                     `JAL:begin//处理上可以类似U类指令，对其中的imm20进行分割截取
                             wd_o   =  inst[11:7];
                             if(valid_bit[wd_o]) begin//检查记分牌,要暂存pc的寄存器未被占用
-                                stop <= 1;
+                                stop <= `unStall;
                                 aluop_o <= operate;
                                 wreg_o  <=  `WriteEnable;
                                 reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址

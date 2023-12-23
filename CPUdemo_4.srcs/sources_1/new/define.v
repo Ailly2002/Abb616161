@@ -18,7 +18,8 @@
 `define IMM_U_BUS 31:12
 `define IMM_U_SIZE 20
 
-
+`define Stall 1'b1          
+`define unStall 1'b0         
 `define RstEnable 1'b1          //复位使能
 `define RstDisable 1'b0         //复位除能
 `define WriteEnable 1'b1        //写使能
