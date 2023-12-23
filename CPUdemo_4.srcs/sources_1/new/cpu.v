@@ -15,6 +15,7 @@ module cpu(
     wire[`ADDR_BUS]         pc_bus;//PC模块地址线
     wire[`ADDR_BUS]         pc_i;
     wire[`ADDR_BUS]         ir_idpc;//ID段获取pc地址的通道
+    wire[`ADDR_BUS]         pc_add_o;
     //连接ID模块和EX模块
     wire[`AluOpBus] id_aluop;
     wire[6:0] id_alufuns;
@@ -52,8 +53,11 @@ module cpu(
     pc PC(
         .clk(clk), .rst(rst), .ct(ct),.pc_set(pc_i),.pc_bus_o(pc_bus)
         );//偏移字段有干涉，待修改
+    mux2 ADD_MUX(
+        .in1(),.in2(pc_add_o),.sel(go),.out(pc_i)
+        );
     pc_add PC_ADD(
-        .pc_dr(pc_bus),.stop(stop),.pc_next(pc_i)
+        .pc_dr(pc_bus),.stop(stop),.pc_next(pc_add_o)
         );
     insReg IR(
         .addr(pc_bus),.Ins(ins),.pcaddr(ir_idpc)

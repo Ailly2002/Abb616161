@@ -93,6 +93,7 @@ read_verilog -library xil_defaultlib {
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v
+  D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/mux2.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v

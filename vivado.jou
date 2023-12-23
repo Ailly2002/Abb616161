@@ -2,10 +2,10 @@
 # Vivado v2022.2.2 (64-bit)
 # SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
 # IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
-# Start of session at: Sat Dec 23 19:28:58 2023
-# Process ID: 22672
+# Start of session at: Sat Dec 23 20:38:31 2023
+# Process ID: 21076
 # Current directory: D:/FPGAdemo/CPUdemo_4
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11080 D:\FPGAdemo\CPUdemo_4\CPUdemo_4.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22360 D:\FPGAdemo\CPUdemo_4\CPUdemo_4.xpr
 # Log file: D:/FPGAdemo/CPUdemo_4/vivado.log
 # Journal file: D:/FPGAdemo/CPUdemo_4\vivado.jou
 # Running On: LAPTOP-T2VDSBIN, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 12, Host memory: 14888 MB
@@ -13,8 +13,16 @@
 start_gui
 open_project D:/FPGAdemo/CPUdemo_4/CPUdemo_4.xpr
 update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
 launch_simulation
 source simcpu.tcl
+add_files -norecurse D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/mux2.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs synth_1 -jobs 6
 wait_on_run synth_1
@@ -23,25 +31,4 @@ wait_on_run impl_1
 close_sim
 launch_simulation
 source simcpu.tcl
-reset_run synth_1
-launch_runs synth_1 -jobs 6
-wait_on_run synth_1
-launch_runs impl_1 -jobs 6
-wait_on_run impl_1
-close_sim
-launch_simulation
-source simcpu.tcl
-run all
-reset_run synth_1
-launch_runs synth_1 -jobs 6
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 6
-wait_on_run synth_1
-launch_runs impl_1 -jobs 6
-wait_on_run impl_1
-close_sim
-launch_simulation
-source simcpu.tcl
-relaunch_sim
 relaunch_sim
