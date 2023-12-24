@@ -16,14 +16,21 @@ module cpu(
     wire [`InstBus] ifid_ins_o;
     wire [`ADDR_BUS] ifid_pcdr_o;
     //连接ID模块和EX模块
-    wire[`AluOpBus] id_aluop;
-    wire[6:0] id_alufuns;
+    wire[`AluOpBus] id_aluop_i;
+    wire[`AluOpBus] id_aluop_o;
+    wire[6:0] id_alufuns_i;
+    wire[6:0] id_alufuns_o;
     wire[9:0] id_ex_vdb;
-    wire[`AluSelBus] id_alusel;//
-    wire[`RegBus] id_reg1;//
-    wire[`RegBus] id_reg2;//
-    wire          id_wreg;//
-    wire[`RegAddr] id_wd;//
+    wire[`AluSelBus] id_alusel_i;
+    wire[`AluSelBus] id_alusel_o;
+    wire[`RegBus] id_reg1_i;
+    wire[`RegBus] id_reg1_o;
+    wire[`RegBus] id_reg2_i;
+    wire[`RegBus] id_reg2_o;
+    wire          id_wreg_i;
+    wire          id_wreg_o;
+    wire[`RegAddr] id_wd_i;
+    wire[`RegAddr] id_wd_o;
     //连接ID模块和Regfile模块
     wire reg1_read;
     wire reg2_read;
@@ -35,16 +42,20 @@ module cpu(
     wire[`RegBus] rf_idvalid;
     wire instvalid;
     //连接ID模块和EX_MUX
-    wire [`ADDR_BUS]id_adpc;
+    wire [`ADDR_BUS]id_adpc_i;
+    wire [`ADDR_BUS]id_adpc_o;
     //连接PC_ADD和PC_MUX
     wire[`ADDR_BUS] pcad_o;
     //连接ID和ADD_MUX
-    wire [`RegBus]  jalr_rs1;
-    wire            j_type;
+    wire [`RegBus]  jalr_rs1_i;
+    wire [`RegBus]  jalr_rs1_o;
+    wire            j_type_i;
+    wire            j_type_o;
     //连接ADD_MUX和EX_ADD
     wire[`RegBus] mx_ad_o;
     //连接ID和EX_ADD
-    wire[`RegBus] j_shift;
+    wire[`RegBus] j_shift_i;
+    wire[`RegBus] j_shift_o;
     //连接EX_ADD和PC_MUX
     wire[`RegBus] ex_add_o;
     //连接EX模块和WB模块
@@ -82,14 +93,15 @@ module cpu(
         );
     
     ifid IF_ID(
-        .clk(clk),.Ins(ins),.pcaddr(ir_idpc),.ifidWrite(stop),.inst(ifid_ins_o),.pcadd(ifid_pcdr_o)
+        .clk(clk),.rst(rst),.Ins(ins),.pcaddr(ir_idpc),.ifidWrite(stop),
+        .inst(ifid_ins_o),.pcadd(ifid_pcdr_o)
         );
 //****译码****
     cu IDU(
         .rst(rst),.inst(ifid_ins_o),.pcadd(ifid_pcdr_o),.valid_bit(rf_idvalid),
         .reg1_data(reg1_data),.reg2_data(reg2_data),.reg1_read(reg1_read),.reg2_read(reg2_read),.reg1_addr(reg1_addr),.reg2_addr(reg2_addr),
-        .instvalid_o(instvalid),.use_vdb(use_vdb),.pcadd_o(id_adpc),.shift(j_shift),.rs1_o(jalr_rs1),.j_type(j_type),
-        .aluop_o(id_aluop),.funct7(id_alufuns),.funct3(id_alusel),.reg1_o(id_reg1),.reg2_o(id_reg2),.wd_o(id_wd),.wreg_o(id_wreg)
+        .instvalid_o(instvalid),.use_vdb(use_vdb),.pcadd_o(id_adpc_i),.shift(j_shift_i),.rs1_o(jalr_rs1_i),.j_type(j_type_i),
+        .aluop_o(id_aluop_i),.funct7(id_alufuns_i),.funct3(id_alusel_i),.reg1_o(id_reg1_i),.reg2_o(id_reg2_i),.wd_o(id_wd_i),.wreg_o(id_wreg_i)
         );
     hdu HDU(
         .use_vdb(use_vdb),.unuse_vdb(unuse_vdb),.valid_bit(rf_idvalid),.instvalid_i(instvalid),.stop(stop)
@@ -100,16 +112,22 @@ module cpu(
         .re1(reg1_read),.rs1_addr(reg1_addr),.rs1_data(reg1_data),.re2(reg2_read),.rs2_addr(reg2_addr),.rs2_data(reg2_data),
         .we(wb_wreg),.wd_addr(wb_wd),.wd_wdata(wb_wdata),.disp_dat(rg_digd)
         );
+
+    idex ID_EX(
+        .clk(clk),.rst(rst),.idexWrite(stop),
+        .pcadd_i(id_adpc_i),.shift_i(j_shift_i),.rs1_i(jalr_rs1_i),.j_type_i(j_type_i),.aluop_i(id_aluop_i),.funct7_i(id_alufuns_i),.funct3_i(id_alusel_i),.reg1_i(id_reg1_i),.reg2_i(id_reg2_i),.wd_i(id_wd_i),.wreg_i(id_wreg_i),
+        .pcadd_o(id_adpc_o),.shift(j_shift_o),.rs1_o(jalr_rs1_o),.j_type(j_type_o),.aluop_o(id_aluop_o),.funct7(id_alufuns_o),.funct3(id_alusel_o),.reg1_o(id_reg1_o),.reg2_o(id_reg2_o),.wd_o(id_wd_o),.wreg_o(id_wreg_o)
+        );
 //****执行****
     mux2 EX_MUX(
-        .in1(id_adpc),.in2(jalr_rs1),.sel(j_type),.out(mx_ad_o)//j=0,JAL(in1) j=1,JALR
+        .in1(id_adpc_o),.in2(jalr_rs1_ors1),.sel(j_type_o),.out(mx_ad_o)//j=0,JAL(in1) j=1,JALR
         );
     add EX_ADD(
-        .in1(mx_ad_o),.shift(j_shift),.add_result(ex_add_o)
+        .in1(mx_ad_o),.shift(j_shift_o),.add_result(ex_add_o)
         );
     alu ALU(
         .clk(clk),.rst(rst),.source_regs(id_ex_vdb),
-        .aluop_i(id_aluop),.funct7(id_alufuns),.funct(id_alusel),.wd_i(id_wd),.wreg_i(id_wreg),.in1(id_reg1), .in2(id_reg2),
+        .aluop_i(id_aluop_o),.funct7(id_alufuns_o),.funct(id_alusel_o),.wd_i(id_wd_o),.wreg_i(id_wreg_o),.in1(id_reg1_o), .in2(id_reg2_o),
         .ct(ct),.ex_chvdb(ex_wb_vdb),.wd_o(ex_wd),.wreg_o(ex_wreg),.z(ex_wdata)
         );
 //****回写****

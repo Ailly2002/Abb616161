@@ -21,7 +21,7 @@ module cu(
     output reg[14:0]            use_vdb,//目的寄存器地址，用于记分牌功能
     
     
-    //输出到EX阶段
+    //输出到EX阶段(下一个阶段)
         //到Add
     output reg [`ADDR_BUS]      pcadd_o,
     output reg [`RegBus]        shift,//立即数偏移量，EX_ADD的另一个操作数
@@ -37,7 +37,6 @@ module cu(
     output reg[`RegAddr]        wd_o,//
     output reg                  wreg_o//
 );
-
     
     reg[`OPcode] operate;//7位指令操作码,操作码类型
     //保存指令执行需要的立即数

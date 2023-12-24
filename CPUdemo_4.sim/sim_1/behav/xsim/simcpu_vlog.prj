@@ -9,6 +9,7 @@ verilog xil_defaultlib  \
 "../../../../CPUdemo_4.srcs/sources_1/new/cu.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/digit.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/gpr.v" \
+"../../../../CPUdemo_4.srcs/sources_1/new/id_ex.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/insreg.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/mux2.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/pc.v" \
