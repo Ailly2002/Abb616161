@@ -5,6 +5,8 @@ module hdu(
     //IDU和WBU修改记分牌入口
     input wire [14:0] use_vdb,
     input wire [14:0] unuse_vdb,
+    //指令有效入口
+    input wire instvalid_i,
     //送到IDU，用于读取记分牌
     output reg [`RegBus] valid_bit,
     output reg           stop //流水线暂停信号
@@ -16,10 +18,13 @@ module hdu(
         stop = 0;
         end
     always @(*)begin//检测数据相关
-        if(valid_bit[use_vdb[14:10]] && valid_bit[use_vdb[9:5]] && valid_bit[use_vdb[4:0]])begin
-            stop = `unStall;//0
+        if(instvalid_i)begin
+            if(valid_bit[use_vdb[14:10]] && valid_bit[use_vdb[9:5]] && valid_bit[use_vdb[4:0]])begin
+                stop = `unStall;//0
+            end
+            else begin stop = `Stall;end//1
         end
-        else stop = `Stall;//1
+        else stop = `unStall;
     end
     always @(*)begin//可以，修改对应位
         if(use_vdb[4:0] != 5'b00000)reg_valid[use_vdb[4:0]]=1'b1;

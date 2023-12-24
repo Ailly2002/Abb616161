@@ -16,7 +16,9 @@ module cu(
     output reg                  reg2_read,
     output reg[`RegAddr]        reg1_addr,
     output reg[`RegAddr]        reg2_addr,
-    output reg[14:0]             use_vdb,//目的寄存器地址，用于记分牌功能
+    //到HDU
+    output reg                  instvalid_o,
+    output reg[14:0]            use_vdb,//目的寄存器地址，用于记分牌功能
     
     
     //输出到EX阶段
@@ -44,10 +46,8 @@ module cu(
     reg[`RegBus]   imm20;//U立即数
 
     //指示指令是否有效
-    reg instvalid;
-    
     initial begin
-        instvalid   =  `InstInvalid;
+        instvalid_o   =  `InstInvalid;
     end
     
     always @(*) begin
@@ -63,7 +63,7 @@ module cu(
                         reg2_addr=`NOPRegAddr;
                         wd_o   =  `NOPRegAddr;
 //                        source_regs = 10'b00000_00000;
-                        instvalid   =  `InstInvalid;
+                        instvalid_o   =  `InstInvalid;
                         
                         
         end
@@ -79,119 +79,54 @@ module cu(
                         reg2_addr=inst[24:20];
                         wd_o   =  inst[11:7];
                             //在所有格式中，RISC-V ISA将源寄存器（rs1和rs2）和目标寄存器（rd）固定在同样的位置，以简化指令译码
-                            if(valid_bit[reg1_addr] && valid_bit[reg2_addr] && valid_bit[wd_o]) begin//检查记分牌
                                 aluop_o <= operate;
                                 wreg_o  <=  `WriteEnable;
                                 reg1_read <= `ReadEnable;
                                 reg2_read <= `ReadEnable;
                                 funct7=inst[31:25];
 //                                source_regs = {reg2_addr,reg1_addr};
-                                instvalid   =  `InstValid;//指令有效
-                            end
-                            else begin
-                                aluop_o <= 7'b0000000;
-                                wreg_o  <=  `WriteDisable;
-                                reg1_read <= `ReadDisable;
-                                reg2_read <= `ReadDisable;
-                                funct7=7'b0000000;
-                                reg1_addr=`NOPRegAddr;
-                                reg2_addr=`NOPRegAddr;
-                                wd_o   =  `NOPRegAddr;
-//                                source_regs = 10'b00000_00000;
-                                instvalid   =  `InstInvalid;
-                            end//如果记分牌无效，用全零填充，原指令状态通过控制PC和IR重新读取
+                                instvalid_o   =  `InstValid;//指令有效
                     end
                  `OP_IMM:begin
                         reg1_addr=inst[19:15];
                         wd_o   =  inst[11:7];
-                            if(valid_bit[reg1_addr] && valid_bit[wd_o]) begin//检查记分牌
+
                                 aluop_o <= operate;
                                 wreg_o  <=  `WriteEnable;
                                 reg1_read <= `ReadEnable;
                                 reg2_read <= `ReadDisable;
                                 funct7=inst[31:25];//立即数高7位，供alu用
 //                                source_regs = {5'b00000,reg1_addr};
-                                instvalid   =  `InstValid;
-                            end 
-                            else if((wd_o == 5'b00000) || (reg1_addr == 5'b00000))begin
-                                aluop_o <= operate;
-                                wreg_o  <=  `WriteEnable;
-                                reg1_read <= `ReadEnable;
-                                reg2_read <= `ReadDisable;
-                                funct7=inst[31:25];//立即数高7位，供alu用
-//                                source_regs = {5'b00000,reg1_addr};
-                                instvalid   =  `InstValid;
-                            end
-                            else begin//阻塞
-                                aluop_o <= 7'b0000000;
-                                wreg_o  <=  `WriteDisable;
-                                reg1_read <= `ReadEnable;
-                                reg2_read <= `ReadDisable;
-                                funct7=7'b0000000;
-                                reg1_addr=`NOPRegAddr;
-                                imm12 = 32'b0000_0000_0000_0000_0000_0000_0000;
-                                wd_o   =  `NOPRegAddr;
-//                                source_regs = 10'b00000_00000;
-                                instvalid   =  `InstInvalid;
-                            end
+                                instvalid_o   =  `InstValid;
+
                     end
                  `LUI:begin
                         reg1_addr=inst[11:7];
                         wd_o   =  inst[11:7];
-                        if(valid_bit[reg1_addr] && valid_bit[wd_o]) begin//检查记分牌
+
                                 aluop_o <= operate;
                                 wreg_o  <=  `WriteEnable;
                                 reg1_read <= `ReadDisable;
                                 reg2_read <= `ReadDisable;
-                                instvalid   =  `InstValid;
-                        end
-                        else begin//NOP
-                                aluop_o <= 7'b0000000;
-                                wreg_o  <=  `WriteDisable;
-                                reg1_read <= `ReadEnable;
-                                reg2_read <= `ReadDisable;
-                                funct7=7'b0000000;
-                                reg1_addr=`NOPRegAddr;
-                                imm12 = 32'b0000_0000_0000_0000_0000_0000_0000;
-                                wd_o   =  `NOPRegAddr;
-//                                source_regs = 10'b00000_00000;
-                                instvalid   =  `InstInvalid;
-                        end
+                                instvalid_o   =  `InstValid;
                     end
                     `AUIPC:begin
                             wd_o   =  inst[11:7];
-                            if(valid_bit[wd_o]) begin//检查记分牌
+                            
                                 aluop_o <= operate;
                                 wreg_o  <=  `WriteEnable;
                                 reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
                                 reg2_read <= `ReadDisable;
-                                instvalid   =  `InstValid;
-                            end
-                            else begin//NOP
-                                aluop_o <= 7'b0000000;
-                                wreg_o  <=  `WriteDisable;
-                                reg1_read <= `ReadEnable;
-                                reg2_read <= `ReadDisable;
-                                funct7=7'b0000000;
-                                reg1_addr=`NOPRegAddr;
-                                imm12 = 32'b0000_0000_0000_0000_0000_0000_0000;
-                                wd_o   =  `NOPRegAddr;
-//                                source_regs = 10'b00000_00000;
-                                instvalid   =  `InstInvalid;
-                            end
+                                instvalid_o   =  `InstValid;
                     end
                     `JAL:begin//处理上可以类似U类指令，对其中的imm20进行分割截取
                             wd_o   =  inst[11:7];
-                            if(valid_bit[wd_o]) begin//检查记分牌,要暂存pc的寄存器未被占用
+                            
                                 aluop_o <= operate;
                                 wreg_o  <=  `WriteEnable;
                                 reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
                                 reg2_read <= `ReadDisable;
-                                instvalid   =  `InstValid;
-                            end
-                            else begin
-                                
-                            end
+                                instvalid_o   =  `InstValid;
                     end
                     `JALR:begin
                     end
@@ -239,7 +174,7 @@ module cu(
     //维护记分牌
     always @(*)begin
         pcadd_o  <= pcadd;
-        if(~instvalid)begin
+        if(~instvalid_o)begin
             use_vdb <= {{reg2_o},{reg1_o},{wd_o}};
         end
     end

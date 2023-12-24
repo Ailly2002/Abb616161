@@ -33,7 +33,7 @@ module cpu(
     wire[`RegAddr] reg2_addr;
     wire[4:0] id_mvdb;
     wire[`RegBus] rf_idvalid;
-    
+    wire instvalid;
     //连接ID模块和EX_MUX
     wire [`ADDR_BUS]id_adpc;
     //连接PC_ADD和PC_MUX
@@ -88,11 +88,11 @@ module cpu(
     cu IDU(
         .rst(rst),.inst(ifid_ins_o),.pcadd(ifid_pcdr_o),.valid_bit(rf_idvalid),
         .reg1_data(reg1_data),.reg2_data(reg2_data),.reg1_read(reg1_read),.reg2_read(reg2_read),.reg1_addr(reg1_addr),.reg2_addr(reg2_addr),
-        .use_vdb(use_vdb),.pcadd_o(id_adpc),.shift(j_shift),.rs1_o(jalr_rs1),.j_type(j_type),
+        .instvalid_o(instvalid),.use_vdb(use_vdb),.pcadd_o(id_adpc),.shift(j_shift),.rs1_o(jalr_rs1),.j_type(j_type),
         .aluop_o(id_aluop),.funct7(id_alufuns),.funct3(id_alusel),.reg1_o(id_reg1),.reg2_o(id_reg2),.wd_o(id_wd),.wreg_o(id_wreg)
         );
     hdu HDU(
-        .use_vdb(use_vdb),.unuse_vdb(unuse_vdb),.valid_bit(rf_idvalid),.stop(stop)
+        .use_vdb(use_vdb),.unuse_vdb(unuse_vdb),.valid_bit(rf_idvalid),.instvalid_i(instvalid),.stop(stop)
         );
     //寄存器堆
     regfile GPR(
