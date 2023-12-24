@@ -26,15 +26,15 @@ module hdu(
         end
         else stop = `unStall;
     end
-    always @(*)begin//可以，修改对应位
-        if(use_vdb[4:0] != 5'b00000)reg_valid[use_vdb[4:0]]=1'b1;
-        else if(use_vdb[9:5] != 5'b00000)reg_valid[use_vdb[9:5]]=1'b1;
-        else if(use_vdb[14:10] != 5'b00000)reg_valid[use_vdb[14:10]]=1'b1;
+    always @(*)begin//使用，修改记分牌的对应十进制数位
+        if(use_vdb[4:0] != 5'b00000)    reg_valid[use_vdb[4:0]]<=1'b1;
+        if(use_vdb[9:5] != 5'b00000)    reg_valid[use_vdb[9:5]]<=1'b1;
+        if(use_vdb[14:10] != 5'b00000)  reg_valid[use_vdb[14:10]]<=1'b1;
     end
-    always @(*)begin//使用结束，修改对应位
-        if(unuse_vdb[4:0] != 5'b00000)      reg_valid[unuse_vdb[4:0]]=reg_valid[unuse_vdb[4:0]]&&0;
-        else if(unuse_vdb[9:5] != 5'b00000) reg_valid[unuse_vdb[9:5]]=reg_valid[unuse_vdb[9:5]]&&0;
-        else if(unuse_vdb[14:10] != 5'b00000)reg_valid[unuse_vdb[14:10]]=reg_valid[unuse_vdb[14:10]]&&0;
+    always @(*)begin//使用结束，记分牌的对应十进制数位
+        if(unuse_vdb[4:0] != 5'b00000)      reg_valid[unuse_vdb[4:0]]<=reg_valid[unuse_vdb[4:0]]&&0;
+        if(unuse_vdb[9:5] != 5'b00000) reg_valid[unuse_vdb[9:5]]<=reg_valid[unuse_vdb[9:5]]&&0;
+        if(unuse_vdb[14:10] != 5'b00000)reg_valid[unuse_vdb[14:10]]<=reg_valid[unuse_vdb[14:10]]&&0;
     end
     always @(*)begin
         valid_bit <= ~reg_valid;
