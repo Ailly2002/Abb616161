@@ -175,7 +175,7 @@ module cu(
     always @(*)begin
         pcadd_o  <= pcadd;
         if(~instvalid_o)begin
-            use_vdb <= {{reg2_o},{reg1_o},{wd_o}};
+            use_vdb <= {{reg2_addr},{reg1_addr},{wd_o}};
         end
     end
     
