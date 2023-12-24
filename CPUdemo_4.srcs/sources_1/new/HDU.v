@@ -19,10 +19,10 @@ module hdu(
         end
     always @(*)begin//检测数据相关
         if(instvalid_i)begin
-            if(valid_bit[use_vdb[14:10]] && valid_bit[use_vdb[9:5]] && valid_bit[use_vdb[4:0]])begin
+            if(((valid_bit >> use_vdb[14:10]) & 1'b1) & ((valid_bit >> use_vdb[9:5]) & 1'b1) & ((valid_bit >> use_vdb[4:0]) & 1'b1))begin
                 stop = `unStall;//0
             end
-            else begin stop = `Stall;end//1
+            else  stop = `Stall;//1
         end
         else stop = `unStall;
     end

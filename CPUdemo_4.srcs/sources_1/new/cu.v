@@ -46,7 +46,7 @@ module cu(
 
     //指示指令是否有效
     initial begin
-        instvalid_o   =  `InstInvalid;
+        instvalid_o   <=  `InstInvalid;
     end
     
     always @(*) begin
@@ -62,7 +62,7 @@ module cu(
                         reg2_addr=`NOPRegAddr;
                         wd_o   =  `NOPRegAddr;
 //                        source_regs = 10'b00000_00000;
-                        instvalid_o   =  `InstInvalid;
+                        instvalid_o   =  `InstValid;
                         
                         
         end
@@ -71,20 +71,20 @@ module cu(
             imm20   <= { inst[31:12] , {12'b0000_0000_0000} };//20位U立即数,低位扩展
             funct3  <= inst[14:12];//3位funct
             operate <= inst[6:0];
-            case(operate)
+            case(inst[6:0])
                 `OP:    begin//所有操作都是读取rs1和rs2寄存器作为源操作数，并把结果写入到寄存器rd中
                         //指令执行要读写的目的寄存器
                         reg1_addr=inst[19:15];
                         reg2_addr=inst[24:20];
                         wd_o   =  inst[11:7];
-                            //在所有格式中，RISC-V ISA将源寄存器（rs1和rs2）和目标寄存器（rd）固定在同样的位置，以简化指令译码
-                                aluop_o <= operate;
-                                wreg_o  <=  `WriteEnable;
-                                reg1_read <= `ReadEnable;
-                                reg2_read <= `ReadEnable;
-                                funct7=inst[31:25];
-//                                source_regs = {reg2_addr,reg1_addr};
-                                instvalid_o   =  `InstValid;//指令有效
+                        //在所有格式中，RISC-V ISA将源寄存器（rs1和rs2）和目标寄存器（rd）固定在同样的位置，以简化指令译码
+                        aluop_o <= operate;
+                        wreg_o  <=  `WriteEnable;
+                        reg1_read <= `ReadEnable;
+                        reg2_read <= `ReadEnable;
+                        funct7=inst[31:25];
+//                        source_regs = {reg2_addr,reg1_addr};
+                        instvalid_o   =  `InstValid;//指令有效
                     end
                  `OP_IMM:begin
                         reg1_addr=inst[19:15];
@@ -132,6 +132,7 @@ module cu(
                     `BRANCH:begin
                     end
                 default:begin
+                    instvalid_o   <=  `InstInvalid;
                 end
             endcase
         end
