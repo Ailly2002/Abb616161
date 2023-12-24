@@ -7,14 +7,14 @@ module cpu(
 );
     wire stop, ct;
     wire [`ADDR_BUS] pc_addr;//32位pc
-//    wire [`FUNCT3_SIZE-1:0] alu_op;//3位funct
     wire [`InstBus] ins;//32位指令读出
-    wire [15:0] in1, in2, Z;
-    wire stall;
     wire[`ADDR_BUS]         pc_bus;//PC模块地址线
     wire[`ADDR_BUS]         pc_i;
     wire[`ADDR_BUS]         ir_idpc;//ID段获取pc地址的通道
     wire[`ADDR_BUS]         pc_add_o;
+    //连接IF_ID和IDU
+    wire [`InstBus] ifid_ins_o;
+    wire [`ADDR_BUS] ifid_pcdr_o;
     //连接ID模块和EX模块
     wire[`AluOpBus] id_aluop;
     wire[6:0] id_alufuns;
@@ -57,6 +57,11 @@ module cpu(
     wire[`RegAddr] wb_wd;
     wire wb_wreg;
     wire[`RegBus] wb_wdata;
+    
+    //连接HDU
+    wire [14:0] use_vdb;
+    wire [14:0] unuse_vdb;
+    
     //连接到数码管
     wire clk_use;
     wire[11:0] rg_digd;
@@ -75,20 +80,25 @@ module cpu(
     insReg IR(
         .addr(pc_bus),.Ins(ins),.pcaddr(ir_idpc)
         );
-
+    
+    ifid IF_ID(
+        .clk(clk),.Ins(ins),.pcaddr(ir_idpc),.ifidWrite(stop),.inst(ifid_ins_o),.pcadd(ifid_pcdr_o)
+        );
 //****译码****
     cu IDU(
-        .clk(clk),.rst(rst),.inst(ins),.pcadd(ir_idpc),.valid_bit(rf_idvalid),
+        .rst(rst),.inst(ifid_ins_o),.pcadd(ifid_pcdr_o),.valid_bit(rf_idvalid),
         .reg1_data(reg1_data),.reg2_data(reg2_data),.reg1_read(reg1_read),.reg2_read(reg2_read),.reg1_addr(reg1_addr),.reg2_addr(reg2_addr),
-        .id_chvdb(id_mvdb),.pcadd_o(id_adpc),.shift(j_shift),.rs1_o(jalr_rs1),.j_type(j_type),
-        .stop(stop),.source_regs(id_ex_vdb), 
+        .use_vdb(use_vdb),.pcadd_o(id_adpc),.shift(j_shift),.rs1_o(jalr_rs1),.j_type(j_type),
         .aluop_o(id_aluop),.funct7(id_alufuns),.funct3(id_alusel),.reg1_o(id_reg1),.reg2_o(id_reg2),.wd_o(id_wd),.wreg_o(id_wreg)
+        );
+    hdu HDU(
+        .use_vdb(use_vdb),.unuse_vdb(unuse_vdb),.valid_bit(rf_idvalid),.stop(stop)
         );
     //寄存器堆
     regfile GPR(
-        .clk(clk), .rst(rst),.id_chvdb(id_mvdb),.wb_chvdb(wb_rf_vdb),
+        .clk(clk), .rst(rst),.wb_chvdb(wb_rf_vdb),
         .re1(reg1_read),.rs1_addr(reg1_addr),.rs1_data(reg1_data),.re2(reg2_read),.rs2_addr(reg2_addr),.rs2_data(reg2_data),
-        .we(wb_wreg),.wd_addr(wb_wd),.wd_wdata(wb_wdata),.disp_dat(rg_digd),.valid_bit(rf_idvalid)
+        .we(wb_wreg),.wd_addr(wb_wd),.wd_wdata(wb_wdata),.disp_dat(rg_digd)
         );
 //****执行****
     mux2 EX_MUX(
@@ -106,7 +116,7 @@ module cpu(
     wbu WB(
         .rst(rst), .clk(clk),
         .ex_chvdb(ex_wb_vdb),.ex_wreg(ex_wreg),.ex_addr(ex_wd),.data_in(ex_wdata),
-        .wb_chvdb(wb_rf_vdb),.wb_wreg(wb_wreg),.wb_addr(wb_wd),.data_out(wb_wdata)
+        .wb_chvdb(wb_rf_vdb),.wb_wreg(wb_wreg),.wb_addr(wb_wd),.data_out(wb_wdata),.unuse_vdb(unuse_vdb)
         );
 //****显示上板****
     clk_use CLU(

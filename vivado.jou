@@ -86,3 +86,143 @@ close_sim
 launch_simulation
 source simcpu.tcl
 relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+close [ open D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/IF_ID.v w ]
+add_files D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/IF_ID.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close [ open D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/HDU.v w ]
+add_files D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/HDU.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+close [ open D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/id_ex.v w ]
+add_files D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/id_ex.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

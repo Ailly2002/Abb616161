@@ -1,7 +1,7 @@
 Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2.2 (win64) Build 3788238 Tue Feb 21 20:00:34 MST 2023
-| Date         : Sat Dec 23 23:16:34 2023
+| Date         : Sun Dec 24 14:45:26 2023
 | Host         : LAPTOP-T2VDSBIN running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file cpu_timing_summary_routed.rpt -pb cpu_timing_summary_routed.pb -rpx cpu_timing_summary_routed.rpx -warn_on_violation
 | Design       : cpu
@@ -278,7 +278,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
     SLICE_X64Y34         FDRE                         0.000     0.000 r  DIG/regN_reg[17]/C
     SLICE_X64Y34         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  DIG/regN_reg[17]/Q
-                         net (fo=5, routed)           1.802     2.320    DIG/p_0_in_0[1]
+                         net (fo=5, routed)           1.802     2.320    DIG/p_0_in[1]
     SLICE_X65Y66         LUT2 (Prop_lut2_I0_O)        0.152     2.472 r  DIG/an_OBUF[0]_inst_i_1/O
                          net (fo=1, routed)           1.808     4.280    an_OBUF[0]
     G2                   OBUF (Prop_obuf_I_O)         3.755     8.034 r  an_OBUF[0]_inst/O
@@ -300,7 +300,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
     SLICE_X64Y34         FDRE                         0.000     0.000 r  DIG/regN_reg[17]/C
     SLICE_X64Y34         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  DIG/regN_reg[17]/Q
-                         net (fo=5, routed)           1.801     2.319    DIG/p_0_in_0[1]
+                         net (fo=5, routed)           1.801     2.319    DIG/p_0_in[1]
     SLICE_X65Y66         LUT2 (Prop_lut2_I0_O)        0.152     2.471 r  DIG/an_OBUF[3]_inst_i_1/O
                          net (fo=1, routed)           1.663     4.134    an_OBUF[3]
     H1                   OBUF (Prop_obuf_I_O)         3.751     7.885 r  an_OBUF[3]_inst/O
@@ -322,7 +322,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
     SLICE_X64Y34         FDRE                         0.000     0.000 r  DIG/regN_reg[17]/C
     SLICE_X64Y34         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  DIG/regN_reg[17]/Q
-                         net (fo=5, routed)           1.802     2.320    DIG/p_0_in_0[1]
+                         net (fo=5, routed)           1.802     2.320    DIG/p_0_in[1]
     SLICE_X65Y66         LUT2 (Prop_lut2_I1_O)        0.124     2.444 r  DIG/an_OBUF[1]_inst_i_1/O
                          net (fo=1, routed)           1.807     4.251    an_OBUF[1]
     C2                   OBUF (Prop_obuf_I_O)         3.568     7.819 r  an_OBUF[1]_inst/O
@@ -344,7 +344,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
     SLICE_X64Y34         FDRE                         0.000     0.000 r  DIG/regN_reg[17]/C
     SLICE_X64Y34         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  DIG/regN_reg[17]/Q
-                         net (fo=5, routed)           1.801     2.319    DIG/p_0_in_0[1]
+                         net (fo=5, routed)           1.801     2.319    DIG/p_0_in[1]
     SLICE_X65Y66         LUT2 (Prop_lut2_I0_O)        0.124     2.443 r  DIG/an_OBUF[2]_inst_i_1/O
                          net (fo=1, routed)           1.668     4.111    an_OBUF[2]
     C1                   OBUF (Prop_obuf_I_O)         3.565     7.676 r  an_OBUF[2]_inst/O
@@ -368,7 +368,7 @@ Slack:                    inf
     N4                   IBUF (Prop_ibuf_I_O)         1.456     1.456 f  rst_IBUF_inst/O
                          net (fo=1, routed)           1.147     2.603    CLU/rst_IBUF
     SLICE_X65Y18         LUT1 (Prop_lut1_I0_O)        0.124     2.727 r  CLU/counter[0]_i_2/O
-                         net (fo=42, routed)          2.688     5.415    DIG/p_0_in
+                         net (fo=42, routed)          2.688     5.415    DIG/regN_reg[17]_0
     SLICE_X64Y34         FDRE                                         r  DIG/regN_reg[16]/R
   -------------------------------------------------------------------    -------------------
 
@@ -388,7 +388,7 @@ Slack:                    inf
     N4                   IBUF (Prop_ibuf_I_O)         1.456     1.456 f  rst_IBUF_inst/O
                          net (fo=1, routed)           1.147     2.603    CLU/rst_IBUF
     SLICE_X65Y18         LUT1 (Prop_lut1_I0_O)        0.124     2.727 r  CLU/counter[0]_i_2/O
-                         net (fo=42, routed)          2.688     5.415    DIG/p_0_in
+                         net (fo=42, routed)          2.688     5.415    DIG/regN_reg[17]_0
     SLICE_X64Y34         FDRE                                         r  DIG/regN_reg[17]/R
   -------------------------------------------------------------------    -------------------
 
@@ -408,7 +408,7 @@ Slack:                    inf
     N4                   IBUF (Prop_ibuf_I_O)         1.456     1.456 f  rst_IBUF_inst/O
                          net (fo=1, routed)           1.147     2.603    CLU/rst_IBUF
     SLICE_X65Y18         LUT1 (Prop_lut1_I0_O)        0.124     2.727 r  CLU/counter[0]_i_2/O
-                         net (fo=42, routed)          2.550     5.277    DIG/p_0_in
+                         net (fo=42, routed)          2.550     5.277    DIG/regN_reg[17]_0
     SLICE_X64Y33         FDRE                                         r  DIG/regN_reg[12]/R
   -------------------------------------------------------------------    -------------------
 
@@ -428,7 +428,7 @@ Slack:                    inf
     N4                   IBUF (Prop_ibuf_I_O)         1.456     1.456 f  rst_IBUF_inst/O
                          net (fo=1, routed)           1.147     2.603    CLU/rst_IBUF
     SLICE_X65Y18         LUT1 (Prop_lut1_I0_O)        0.124     2.727 r  CLU/counter[0]_i_2/O
-                         net (fo=42, routed)          2.550     5.277    DIG/p_0_in
+                         net (fo=42, routed)          2.550     5.277    DIG/regN_reg[17]_0
     SLICE_X64Y33         FDRE                                         r  DIG/regN_reg[13]/R
   -------------------------------------------------------------------    -------------------
 
@@ -448,7 +448,7 @@ Slack:                    inf
     N4                   IBUF (Prop_ibuf_I_O)         1.456     1.456 f  rst_IBUF_inst/O
                          net (fo=1, routed)           1.147     2.603    CLU/rst_IBUF
     SLICE_X65Y18         LUT1 (Prop_lut1_I0_O)        0.124     2.727 r  CLU/counter[0]_i_2/O
-                         net (fo=42, routed)          2.550     5.277    DIG/p_0_in
+                         net (fo=42, routed)          2.550     5.277    DIG/regN_reg[17]_0
     SLICE_X64Y33         FDRE                                         r  DIG/regN_reg[14]/R
   -------------------------------------------------------------------    -------------------
 
@@ -468,7 +468,7 @@ Slack:                    inf
     N4                   IBUF (Prop_ibuf_I_O)         1.456     1.456 f  rst_IBUF_inst/O
                          net (fo=1, routed)           1.147     2.603    CLU/rst_IBUF
     SLICE_X65Y18         LUT1 (Prop_lut1_I0_O)        0.124     2.727 r  CLU/counter[0]_i_2/O
-                         net (fo=42, routed)          2.550     5.277    DIG/p_0_in
+                         net (fo=42, routed)          2.550     5.277    DIG/regN_reg[17]_0
     SLICE_X64Y33         FDRE                                         r  DIG/regN_reg[15]/R
   -------------------------------------------------------------------    -------------------
 

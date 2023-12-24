@@ -88,6 +88,8 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/define.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/Add.v
+  D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/HDU.v
+  D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/IF_ID.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v
