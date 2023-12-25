@@ -18,6 +18,8 @@ module idex(
     input wire[`RegBus]         reg2_i,//
     input wire[`RegAddr]        wd_i,//
     input wire                  wreg_i,//
+    //HDU间接
+    input wire [9:0]            source_regs_i,
     
     //输出到EX阶段(下一个阶段)
         //到Add
@@ -33,7 +35,8 @@ module idex(
     output reg[`RegBus]         reg1_o,//
     output reg[`RegBus]         reg2_o,//
     output reg[`RegAddr]        wd_o,//
-    output reg                  wreg_o//
+    output reg                  wreg_o,//
+    output reg [9:0]            source_regs_o
 );
     always @(posedge clk) begin
             if(rst)begin
@@ -50,6 +53,7 @@ module idex(
                 reg2_o = 5'b00000;
                 wd_o = 5'b00000;
                 wreg_o = 1'b0;
+                source_regs_o = 10'b00000_00000;
             end 
             else begin
                 if(idexWrite == `unStall)begin
@@ -66,6 +70,7 @@ module idex(
                     reg2_o  <= reg2_i;
                     wd_o    <= wd_i;
                     wreg_o  <= wreg_i;
+                    source_regs_o <= source_regs_i;
                 end
             end
         end

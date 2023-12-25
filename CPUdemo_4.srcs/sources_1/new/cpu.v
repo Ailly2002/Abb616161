@@ -20,7 +20,8 @@ module cpu(
     wire[`AluOpBus] id_aluop_o;
     wire[6:0] id_alufuns_i;
     wire[6:0] id_alufuns_o;
-    wire[9:0] id_ex_vdb;
+    wire[9:0] id_ex_vdb_i;
+    wire[9:0] id_ex_vdb_o;
     wire[`AluSelBus] id_alusel_i;
     wire[`AluSelBus] id_alusel_o;
     wire[`RegBus] id_reg1_i;
@@ -104,7 +105,7 @@ module cpu(
         .aluop_o(id_aluop_i),.funct7(id_alufuns_i),.funct3(id_alusel_i),.reg1_o(id_reg1_i),.reg2_o(id_reg2_i),.wd_o(id_wd_i),.wreg_o(id_wreg_i)
         );
     hdu HDU(
-        .use_vdb(use_vdb),.unuse_vdb(unuse_vdb),.source_regs(id_ex_vdb),.instvalid_i(instvalid),.stop(stop)//.valid_bit(rf_idvalid),
+        .use_vdb(use_vdb),.unuse_vdb(unuse_vdb),.source_regs(id_ex_vdb_i),.instvalid_i(instvalid),.stop(stop)//.valid_bit(rf_idvalid),
         );
     //¼Ä´æÆ÷¶Ñ
     regfile GPR(
@@ -115,8 +116,8 @@ module cpu(
 
     idex ID_EX(
         .clk(clk),.rst(rst),.idexWrite(stop),
-        .pcadd_i(id_adpc_i),.shift_i(j_shift_i),.rs1_i(jalr_rs1_i),.j_type_i(j_type_i),.aluop_i(id_aluop_i),.funct7_i(id_alufuns_i),.funct3_i(id_alusel_i),.reg1_i(id_reg1_i),.reg2_i(id_reg2_i),.wd_i(id_wd_i),.wreg_i(id_wreg_i),
-        .pcadd_o(id_adpc_o),.shift(j_shift_o),.rs1_o(jalr_rs1_o),.j_type(j_type_o),.aluop_o(id_aluop_o),.funct7(id_alufuns_o),.funct3(id_alusel_o),.reg1_o(id_reg1_o),.reg2_o(id_reg2_o),.wd_o(id_wd_o),.wreg_o(id_wreg_o)
+        .pcadd_i(id_adpc_i),.shift_i(j_shift_i),.rs1_i(jalr_rs1_i),.j_type_i(j_type_i),.aluop_i(id_aluop_i),.funct7_i(id_alufuns_i),.funct3_i(id_alusel_i),.reg1_i(id_reg1_i),.reg2_i(id_reg2_i),.wd_i(id_wd_i),.wreg_i(id_wreg_i),.source_regs_i(id_ex_vdb_i),
+        .pcadd_o(id_adpc_o),.shift(j_shift_o),.rs1_o(jalr_rs1_o),.j_type(j_type_o),.aluop_o(id_aluop_o),.funct7(id_alufuns_o),.funct3(id_alusel_o),.reg1_o(id_reg1_o),.reg2_o(id_reg2_o),.wd_o(id_wd_o),.wreg_o(id_wreg_o),.source_regs_o(id_ex_vdb_o)
         );
     banch BAC(
         .in1(ct_sel),.in2(),.sel(ct)//
@@ -129,7 +130,7 @@ module cpu(
         .in1(mx_ad_o),.shift(j_shift_o),.add_result(ex_add_o)
         );
     alu ALU(
-        .clk(clk),.rst(rst),.source_regs(id_ex_vdb),
+        .clk(clk),.rst(rst),.source_regs(id_ex_vdb_o),
         .aluop_i(id_aluop_o),.funct7(id_alufuns_o),.funct(id_alusel_o),.wd_i(id_wd_o),.wreg_i(id_wreg_o),.in1(id_reg1_o), .in2(id_reg2_o),
         .ct(ct),.ex_chvdb(ex_wb_vdb),.wd_o(ex_wd),.wreg_o(ex_wreg),.z(ex_wdata)
         );

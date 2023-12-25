@@ -16,7 +16,8 @@ module wbu(
     //记分牌维护
     output reg [14:0] unuse_vdb//使用完毕
 );
-
+    reg sig;
+    initial sig = 1'b0;
     always @ (posedge clk) begin
 		if(rst == `RstEnable) begin
 			wb_wreg <= `WriteDisable;
@@ -35,7 +36,9 @@ module wbu(
 		    data_out <= data_in;
 		    wb_addr <= ex_addr;
 		    end
-		unuse_vdb <= {{ex_chvdb},{wb_addr}};
+    end
+    always @(negedge clk)begin
+        unuse_vdb <= {{ex_chvdb},{wb_addr}};
     end
 //	always @(rst)begin
 //	   if(rst == `RstEnable) begin
