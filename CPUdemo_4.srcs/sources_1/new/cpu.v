@@ -105,7 +105,7 @@ module cpu(
         .aluop_o(id_aluop_i),.funct7(id_alufuns_i),.funct3(id_alusel_i),.reg1_o(id_reg1_i),.reg2_o(id_reg2_i),.wd_o(id_wd_i),.wreg_o(id_wreg_i)
         );
     hdu HDU(
-        .use_vdb(use_vdb),.unuse_vdb(unuse_vdb),.source_regs(id_ex_vdb_i),.instvalid_i(instvalid),.stop(stop)//.valid_bit(rf_idvalid),
+        .clk(clk),.use_vdb(use_vdb),.unuse_vdb(unuse_vdb),.source_regs(id_ex_vdb_i),.instvalid_i(instvalid),.stop(stop)//.valid_bit(rf_idvalid),
         );
     //¼Ä´æÆ÷¶Ñ
     regfile GPR(
