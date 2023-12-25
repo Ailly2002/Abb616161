@@ -80,7 +80,7 @@ module cpu(
 
 //****È¡Ö¸Áî****
     pc PC(
-        .clk(clk), .rst(rst), .ct(ct),.pc_Write(stop),.pc_set(pc_i),.pc_bus_o(pc_bus)
+        .clk(clk), .rst(rst),.pc_Write(stop),.pc_set(pc_i),.pc_bus_o(pc_bus)
         );//Æ«ÒÆ×Ö¶ÎÓÐ¸ÉÉæ£¬´ýÐÞ¸Ä
     mux2 ADD_MUX(
         .in1(ex_add_o),.in2(pc_add_o),.sel(go),.out(pc_i)
@@ -98,17 +98,17 @@ module cpu(
         );
 //****ÒëÂë****
     cu IDU(
-        .rst(rst),.inst(ifid_ins_o),.pcadd(ifid_pcdr_o),.valid_bit(rf_idvalid),
+        .rst(rst),.inst(ifid_ins_o),.pcadd(ifid_pcdr_o),//.valid_bit(rf_idvalid),
         .reg1_data(reg1_data),.reg2_data(reg2_data),.reg1_read(reg1_read),.reg2_read(reg2_read),.reg1_addr(reg1_addr),.reg2_addr(reg2_addr),
-        .instvalid_o(instvalid),.use_vdb(use_vdb),.pcadd_o(id_adpc_i),.shift(j_shift_i),.rs1_o(jalr_rs1_i),.j_type(j_type_i),
+        .instvalid_o(instvalid),.use_vdb(use_vdb),.banch(ct_sel),.pcadd_o(id_adpc_i),.shift(j_shift_i),.rs1_o(jalr_rs1_i),.j_type(j_type_i),
         .aluop_o(id_aluop_i),.funct7(id_alufuns_i),.funct3(id_alusel_i),.reg1_o(id_reg1_i),.reg2_o(id_reg2_i),.wd_o(id_wd_i),.wreg_o(id_wreg_i)
         );
     hdu HDU(
-        .use_vdb(use_vdb),.unuse_vdb(unuse_vdb),.valid_bit(rf_idvalid),.instvalid_i(instvalid),.stop(stop)
+        .use_vdb(use_vdb),.unuse_vdb(unuse_vdb),.source_regs(id_ex_vdb),.instvalid_i(instvalid),.stop(stop)//.valid_bit(rf_idvalid),
         );
     //¼Ä´æÆ÷¶Ñ
     regfile GPR(
-        .clk(clk), .rst(rst),.wb_chvdb(wb_rf_vdb),
+        .clk(clk), .rst(rst),
         .re1(reg1_read),.rs1_addr(reg1_addr),.rs1_data(reg1_data),.re2(reg2_read),.rs2_addr(reg2_addr),.rs2_data(reg2_data),
         .we(wb_wreg),.wd_addr(wb_wd),.wd_wdata(wb_wdata),.disp_dat(rg_digd)
         );
@@ -117,6 +117,9 @@ module cpu(
         .clk(clk),.rst(rst),.idexWrite(stop),
         .pcadd_i(id_adpc_i),.shift_i(j_shift_i),.rs1_i(jalr_rs1_i),.j_type_i(j_type_i),.aluop_i(id_aluop_i),.funct7_i(id_alufuns_i),.funct3_i(id_alusel_i),.reg1_i(id_reg1_i),.reg2_i(id_reg2_i),.wd_i(id_wd_i),.wreg_i(id_wreg_i),
         .pcadd_o(id_adpc_o),.shift(j_shift_o),.rs1_o(jalr_rs1_o),.j_type(j_type_o),.aluop_o(id_aluop_o),.funct7(id_alufuns_o),.funct3(id_alusel_o),.reg1_o(id_reg1_o),.reg2_o(id_reg2_o),.wd_o(id_wd_o),.wreg_o(id_wreg_o)
+        );
+    banch BAC(
+        .in1(ct_sel),.in2(),.sel(ct)//
         );
 //****Ö´ÐÐ****
     mux2 EX_MUX(
@@ -134,7 +137,7 @@ module cpu(
     wbu WB(
         .rst(rst), .clk(clk),
         .ex_chvdb(ex_wb_vdb),.ex_wreg(ex_wreg),.ex_addr(ex_wd),.data_in(ex_wdata),
-        .wb_chvdb(wb_rf_vdb),.wb_wreg(wb_wreg),.wb_addr(wb_wd),.data_out(wb_wdata),.unuse_vdb(unuse_vdb)
+        .wb_wreg(wb_wreg),.wb_addr(wb_wd),.data_out(wb_wdata),.unuse_vdb(unuse_vdb)
         );
 //****ÏÔÊ¾ÉÏ°å****
     clk_use CLU(

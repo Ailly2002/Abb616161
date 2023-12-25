@@ -6,7 +6,7 @@ module cu(
     input wire  [`InstBus]      inst,
     input wire  [`ADDR_BUS]     pcadd,//当前PC地址
     
-    input wire [`RegBus]        valid_bit,//读取记分牌当前有效位
+//    input wire [`RegBus]        valid_bit,//读取记分牌当前有效位
     
     //读取得Regfile的值
     input wire[`RegBus]         reg1_data,
@@ -19,7 +19,8 @@ module cu(
     //到HDU
     output reg                  instvalid_o,
     output reg[14:0]            use_vdb,//目的寄存器地址，用于记分牌功能
-    
+    //到banch
+    output reg     banch,
     
     //输出到EX阶段(下一个阶段)
         //到Add
@@ -44,9 +45,10 @@ module cu(
     reg[`RegBus]   imm12;//I立即数
     reg[`RegBus]   imm20;//U立即数
 
-    //指示指令是否有效
+    
     initial begin
-        instvalid_o   <=  `InstInvalid;
+        instvalid_o   <=  `InstInvalid;//指示指令是否有效
+        banch <= 1'b1;//默认跳转
     end
     
     always @(*) begin
@@ -89,14 +91,13 @@ module cu(
                  `OP_IMM:begin
                         reg1_addr=inst[19:15];
                         wd_o   =  inst[11:7];
-
-                                aluop_o <= operate;
-                                wreg_o  <=  `WriteEnable;
-                                reg1_read <= `ReadEnable;
-                                reg2_read <= `ReadDisable;
-                                funct7=inst[31:25];//立即数高7位，供alu用
+                        aluop_o <= operate;
+                        wreg_o  <=  `WriteEnable;
+                        reg1_read <= `ReadEnable;
+                        reg2_read <= `ReadDisable;
+                        funct7=inst[31:25];//立即数高7位，供alu用
 //                                source_regs = {5'b00000,reg1_addr};
-                                instvalid_o   =  `InstValid;
+                        instvalid_o   =  `InstValid;
 
                     end
                  `LUI:begin
@@ -120,14 +121,25 @@ module cu(
                     end
                     `JAL:begin//处理上可以类似U类指令，对其中的imm20进行分割截取
                             wd_o   =  inst[11:7];
-                            
-                                aluop_o <= operate;
-                                wreg_o  <=  `WriteEnable;
-                                reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
-                                reg2_read <= `ReadDisable;
-                                instvalid_o   =  `InstValid;
+                            j_type <= 1'b0;
+                            aluop_o <= operate;
+                            shift <= {{13{inst[31]}},inst[19:12],inst[20],inst[30:21]};//对偏移量符号拓展
+                            wreg_o  <=  `WriteDisable;//跳转指令不写回寄存器
+                            reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
+                            reg2_read <= `ReadDisable;
+                            funct7=7'b0000000;
+                            instvalid_o   =  `InstValid;
+                            banch <= 1'b1; 
                     end
                     `JALR:begin
+                            j_type <= 1'b1;
+                            aluop_o <= operate;
+                            shift <= imm12;//inst[31:20]
+                            wreg_o  <=  `WriteDisable;//跳转指令不写回寄存器
+                            reg1_read <= `ReadEnable;//通过rs1间接跳转
+                            reg2_read <= `ReadDisable;
+                            instvalid_o   =  `InstValid;
+                            banch <= 1'b1;
                     end
                     `BRANCH:begin
                     end
@@ -146,6 +158,8 @@ module cu(
             reg1_o <= reg1_data;  //Regfile读端口1的输出值
         end else if(reg1_read == `ReadDisable) begin
             if(operate == `AUIPC)begin
+                reg1_o <= pcadd;end
+            else if(operate == `JAL)begin
                 reg1_o <= pcadd;end
             else begin
                 reg1_o <= `ZeroWord;end          //立即数

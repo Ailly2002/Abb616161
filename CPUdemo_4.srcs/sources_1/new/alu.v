@@ -86,27 +86,10 @@ module alu(
                 z = in1 + in2;//rd = pc+extend'IMM_U
             end
       end
-//          case (funct)
-//              3'b000: z = 0;   //清除累加器指令CLA
-//              3'b001: z = ~in1;    //累加器取反指令COM    
-//              3'b010: z = in1[15] == 1 ? {1'b1, in1[15:1]} : {1'b0, in1[15:1]};    //算术右移一位指令SHR in1>>>1;//
-//              3'b011: z = {in1[14:0], in1[15]};    //循环左移一位指令CSL
-//              3'b100: z = in1 + in2;   //加法指令ADD
-//              3'b101: z = in1;    //存数指令STA
-//              3'b110: z = in2;   //取数指令LDA
-//              4'b1000: ct = in1[15]==1?1:0;   //有条件转移BAN
-//              4'b1001: ;    //停机指令
-//              4'b1010:  z=in1&in2;//AND
-//              4'b1011: z=in1|in2;//OR
-//              4'b1100: z=in1-in2;//SUB
-//      default ;
-//      endcase
     always @ (posedge clk) begin
          wd_o = wd_i;       //要写的目的寄存器地址
          wreg_o = wreg_i;
          ex_chvdb = source_regs;
     end
-
-
 endmodule
 

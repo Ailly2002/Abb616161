@@ -2,9 +2,7 @@
 module regfile(
     input   wire    clk,
     input   wire    rst,
-    //IDU和WBU修改记分牌入口
-    input wire [4:0] id_chvdb,
-    input wire [9:0] wb_chvdb,
+
     //读寄存器 reg1
     input wire                    re1,     // read enable
     input   wire    [`RegAddr]   rs1_addr,
