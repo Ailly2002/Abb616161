@@ -31,6 +31,9 @@ module hdu(
                 if(use_vdb[14:10] != 5'b00000)  reg_valid[use_vdb[14:10]]   <=1'b1;
                 source_regs <= {{use_vdb[14:10]},{use_vdb[9:5]}};
             end
+            else if(use_vdb == 15'b00000_00000_00000)begin
+                stop <= `unStall;//0
+            end
             else  begin
                 stop <= `Stall;//1
             end

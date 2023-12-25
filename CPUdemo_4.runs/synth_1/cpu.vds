@@ -2,8 +2,8 @@
 # Vivado v2022.2.2 (64-bit)
 # SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
 # IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
-# Start of session at: Mon Dec 25 21:02:55 2023
-# Process ID: 1936
+# Start of session at: Mon Dec 25 21:25:31 2023
+# Process ID: 3316
 # Current directory: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1
 # Command line: vivado.exe -log cpu.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu.tcl
 # Log file: D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/cpu.vds
@@ -23,13 +23,13 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 8772
+INFO: [Synth 8-7075] Helper process launched with PID 11596
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 INFO: [Synth 8-11241] undeclared symbol 'ct_sel', assumed default net type 'wire' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:104]
 INFO: [Synth 8-11241] undeclared symbol 'jalr_rs1_ors1', assumed default net type 'wire' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:127]
 INFO: [Synth 8-11241] undeclared symbol 'num', assumed default net type 'wire' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:148]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1209.477 ; gain = 409.070
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1208.957 ; gain = 410.328
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'cpu' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:2]
 INFO: [Synth 8-6157] synthesizing module 'pc' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v:3]
@@ -127,18 +127,18 @@ WARNING: [Synth 8-7129] Port seg[2] in module cpu is either unconnected or has n
 WARNING: [Synth 8-7129] Port seg[1] in module cpu is either unconnected or has no load
 WARNING: [Synth 8-7129] Port seg[0] in module cpu is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1309.066 ; gain = 508.660
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1309.133 ; gain = 510.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1309.066 ; gain = 508.660
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1309.133 ; gain = 510.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1309.066 ; gain = 508.660
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1309.133 ; gain = 510.504
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1309.066 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1309.133 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -220,52 +220,52 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/cpu_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1415.977 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1375.887 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1415.977 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1375.887 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'reg1_read_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:60]
 WARNING: [Synth 8-327] inferring latch for variable 'reg2_read_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:61]
 WARNING: [Synth 8-327] inferring latch for variable 'reg1_addr_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:63]
 WARNING: [Synth 8-327] inferring latch for variable 'reg2_addr_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:64]
 WARNING: [Synth 8-327] inferring latch for variable 'instvalid_o_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:67]
-WARNING: [Synth 8-327] inferring latch for variable 'use_vdb_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:192]
-WARNING: [Synth 8-327] inferring latch for variable 'banch_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:132]
-WARNING: [Synth 8-327] inferring latch for variable 'shift_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:126]
-WARNING: [Synth 8-327] inferring latch for variable 'j_type_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:124]
+WARNING: [Synth 8-327] inferring latch for variable 'use_vdb_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:197]
+WARNING: [Synth 8-327] inferring latch for variable 'banch_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:134]
+WARNING: [Synth 8-327] inferring latch for variable 'shift_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:128]
+WARNING: [Synth 8-327] inferring latch for variable 'j_type_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:126]
 WARNING: [Synth 8-327] inferring latch for variable 'aluop_o_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:58]
 WARNING: [Synth 8-327] inferring latch for variable 'funct7_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:62]
 WARNING: [Synth 8-327] inferring latch for variable 'funct3_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:74]
-WARNING: [Synth 8-327] inferring latch for variable 'reg2_o_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:174]
+WARNING: [Synth 8-327] inferring latch for variable 'reg2_o_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:179]
 WARNING: [Synth 8-327] inferring latch for variable 'wd_o_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:65]
 WARNING: [Synth 8-327] inferring latch for variable 'wreg_o_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:59]
 WARNING: [Synth 8-327] inferring latch for variable 'imm12_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:72]
 WARNING: [Synth 8-327] inferring latch for variable 'imm20_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v:73]
 WARNING: [Synth 8-327] inferring latch for variable 'source_regs_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/HDU.v:32]
-WARNING: [Synth 8-327] inferring latch for variable 'reg_valid_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/HDU.v:42]
+WARNING: [Synth 8-327] inferring latch for variable 'reg_valid_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/HDU.v:45]
 WARNING: [Synth 8-327] inferring latch for variable 'reg_valid_reg' [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/HDU.v:27]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -296,12 +296,12 @@ Detailed RTL Component Info :
 	  14 Input    8 Bit        Muxes := 1     
 	   2 Input    7 Bit        Muxes := 3     
 	   8 Input    7 Bit        Muxes := 1     
-	   2 Input    5 Bit        Muxes := 3     
-	   8 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 4     
+	   8 Input    5 Bit        Muxes := 2     
 	   4 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 53    
-	   8 Input    1 Bit        Muxes := 10    
+	   2 Input    1 Bit        Muxes := 50    
+	   8 Input    1 Bit        Muxes := 7     
 	   9 Input    1 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 1     
 	   4 Input    1 Bit        Muxes := 1     
@@ -471,25 +471,25 @@ WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[13]) is unused and will b
 WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[12]) is unused and will be removed from module cu.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -507,37 +507,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -568,18 +568,18 @@ Report Cell Usage:
 |13    |OBUFT  |     8|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1375.887 ; gain = 577.258
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 325 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 1415.977 ; gain = 508.660
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1415.977 ; gain = 615.570
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 1375.887 ; gain = 510.504
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1375.887 ; gain = 577.258
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1415.977 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1375.887 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1415.977 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1375.887 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -587,8 +587,8 @@ Synth Design complete, checksum: b62591e5
 INFO: [Common 17-83] Releasing license: Synthesis
 61 Infos, 252 Warnings, 27 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1415.977 ; gain = 994.965
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1375.887 ; gain = 955.309
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'D:/FPGAdemo/CPUdemo_4/CPUdemo_4.runs/synth_1/cpu.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_utilization_synth.rpt -pb cpu_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Dec 25 21:03:36 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 25 21:26:11 2023...

@@ -18,7 +18,7 @@ module cu(
     output reg[`RegAddr]        reg2_addr,
     //到HDU
     output reg                  instvalid_o,
-    output reg[14:0]            use_vdb,//目的寄存器地址，用于记分牌功能
+    output reg[14:0]            use_vdb,//要使用的寄存器地址，用于记分牌功能
     //到banch
     output reg     banch,
     
@@ -85,42 +85,44 @@ module cu(
                         reg1_read <= `ReadEnable;
                         reg2_read <= `ReadEnable;
                         funct7=inst[31:25];
-//                        source_regs = {reg2_addr,reg1_addr};
                         instvalid_o   =  `InstValid;//指令有效
                     end
                  `OP_IMM:begin
                         reg1_addr=inst[19:15];
+                        reg2_addr=5'b00000;
                         wd_o   =  inst[11:7];
                         aluop_o <= operate;
                         wreg_o  <=  `WriteEnable;
                         reg1_read <= `ReadEnable;
                         reg2_read <= `ReadDisable;
                         funct7=inst[31:25];//立即数高7位，供alu用
-//                                source_regs = {5'b00000,reg1_addr};
                         instvalid_o   =  `InstValid;
 
                     end
                  `LUI:begin
                         reg1_addr=inst[11:7];
+                        reg2_addr=5'b00000;
                         wd_o   =  inst[11:7];
-
-                                aluop_o <= operate;
-                                wreg_o  <=  `WriteEnable;
-                                reg1_read <= `ReadDisable;
-                                reg2_read <= `ReadDisable;
-                                instvalid_o   =  `InstValid;
+                        aluop_o <= operate;
+                        wreg_o  <=  `WriteEnable;
+                        reg1_read <= `ReadDisable;
+                        reg2_read <= `ReadDisable;
+                        instvalid_o   =  `InstValid;
                     end
                     `AUIPC:begin
-                            wd_o   =  inst[11:7];
-                            
-                                aluop_o <= operate;
-                                wreg_o  <=  `WriteEnable;
-                                reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
-                                reg2_read <= `ReadDisable;
-                                instvalid_o   =  `InstValid;
+                        reg1_addr=5'b00000;
+                        reg2_addr=5'b00000;
+                        wd_o   =  inst[11:7];
+                        aluop_o <= operate;
+                        wreg_o  <=  `WriteEnable;
+                        reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
+                        reg2_read <= `ReadDisable;
+                        instvalid_o   =  `InstValid;
                     end
                     `JAL:begin//处理上可以类似U类指令，对其中的imm20进行分割截取
-                            wd_o   =  inst[11:7];
+                        reg1_addr=5'b00000;
+                        reg2_addr=5'b00000;
+                        wd_o   =  inst[11:7];
                             j_type <= 1'b0;
                             aluop_o <= operate;
                             shift <= {{13{inst[31]}},inst[19:12],inst[20],inst[30:21]};//对偏移量符号拓展
@@ -132,6 +134,9 @@ module cu(
                             banch <= 1'b1; 
                     end
                     `JALR:begin
+                        reg1_addr=inst[19:15];
+                        reg2_addr=5'b00000;
+                        wd_o   =  inst[11:7];
                             j_type <= 1'b1;
                             aluop_o <= operate;
                             shift <= imm12;//inst[31:20]
