@@ -6,6 +6,9 @@ module cpu(
 //    output wire [15:0] num
 );
     wire stop, ct;
+    wire banch_j;
+    wire branch_stall;
+    wire IF_Flush;//分支指令流水线冲刷信号
     wire [`ADDR_BUS] pc_addr;//32位pc
     wire [`InstBus] ins;//32位指令读出
     wire[`ADDR_BUS]         pc_bus;//PC模块地址线
@@ -84,7 +87,7 @@ module cpu(
         .clk(clk), .rst(rst),.pc_Write(stop),.pc_set(pc_i),.pc_bus_o(pc_bus)
         );//偏移字段有干涉，待修改
     mux2 ADD_MUX(
-        .in1(ex_add_o),.in2(pc_add_o),.sel(go),.out(pc_i)
+        .in1(pc_add_o),.in2(ex_add_o),.sel(banch_j),.out(pc_i)
         );
     pc_add PC_ADD(
         .pc_dr(pc_bus),.pc(pc_add_o)
@@ -94,14 +97,16 @@ module cpu(
         );
     
     ifid IF_ID(
-        .clk(clk),.rst(rst),.Ins(ins),.pcaddr(ir_idpc),.ifidWrite(stop),
+        .clk(clk),.rst(rst),
+        .ifflush(IF_Flush),.Ins(ins),.pcaddr(ir_idpc),.ifidWrite(stop),
         .inst(ifid_ins_o),.pcadd(ifid_pcdr_o)
         );
 //****译码****
     cu IDU(
-        .rst(rst),.inst(ifid_ins_o),.pcadd(ifid_pcdr_o),//.valid_bit(rf_idvalid),
+        .clk(clk),.rst(rst),
+        .inst(ifid_ins_o),.pcadd(ifid_pcdr_o),
         .reg1_data(reg1_data),.reg2_data(reg2_data),.reg1_read(reg1_read),.reg2_read(reg2_read),.reg1_addr(reg1_addr),.reg2_addr(reg2_addr),
-        .instvalid_o(instvalid),.use_vdb(use_vdb),.banch(ct_sel),.pcadd_o(id_adpc_i),.shift(j_shift_i),.rs1_o(jalr_rs1_i),.j_type(j_type_i),
+        .instvalid_o(instvalid),.use_vdb(use_vdb),.branch_stall(IF_Flush),.banch(ct_sel),.pcadd_o(id_adpc_i),.shift(j_shift_i),.rs1_o(jalr_rs1_i),.j_type(j_type_i),
         .aluop_o(id_aluop_i),.funct7(id_alufuns_i),.funct3(id_alusel_i),.reg1_o(id_reg1_i),.reg2_o(id_reg2_i),.wd_o(id_wd_i),.wreg_o(id_wreg_i)
         );
     hdu HDU(
@@ -113,22 +118,21 @@ module cpu(
         .re1(reg1_read),.rs1_addr(reg1_addr),.rs1_data(reg1_data),.re2(reg2_read),.rs2_addr(reg2_addr),.rs2_data(reg2_data),
         .we(wb_wreg),.wd_addr(wb_wd),.wd_wdata(wb_wdata),.disp_dat(rg_digd)
         );
-
+    idmux ID_MUX(
+        .in1(id_adpc_i),.in2(jalr_rs1_i),.sel(j_type_i),.out(mx_ad_o)//j=0,JAL(in1) j=1,JALR
+        );
+    add ID_ADD(
+        .in1(mx_ad_o),.shift(j_shift_i),.add_result(ex_add_o)
+        );
     idex ID_EX(
         .clk(clk),.rst(rst),.idexWrite(stop),
-        .pcadd_i(id_adpc_i),.shift_i(j_shift_i),.rs1_i(jalr_rs1_i),.j_type_i(j_type_i),.aluop_i(id_aluop_i),.funct7_i(id_alufuns_i),.funct3_i(id_alusel_i),.reg1_i(id_reg1_i),.reg2_i(id_reg2_i),.wd_i(id_wd_i),.wreg_i(id_wreg_i),.source_regs_i(id_ex_vdb_i),
-        .pcadd_o(id_adpc_o),.shift(j_shift_o),.rs1_o(jalr_rs1_o),.j_type(j_type_o),.aluop_o(id_aluop_o),.funct7(id_alufuns_o),.funct3(id_alusel_o),.reg1_o(id_reg1_o),.reg2_o(id_reg2_o),.wd_o(id_wd_o),.wreg_o(id_wreg_o),.source_regs_o(id_ex_vdb_o)
-        );
-    banch BAC(
-        .in1(ct_sel),.in2(),.sel(ct)//
+        .aluop_i(id_aluop_i),.funct7_i(id_alufuns_i),.funct3_i(id_alusel_i),.reg1_i(id_reg1_i),.reg2_i(id_reg2_i),.wd_i(id_wd_i),.wreg_i(id_wreg_i),.source_regs_i(id_ex_vdb_i),
+        .aluop_o(id_aluop_o),.funct7(id_alufuns_o),.funct3(id_alusel_o),.reg1_o(id_reg1_o),.reg2_o(id_reg2_o),.wd_o(id_wd_o),.wreg_o(id_wreg_o),.source_regs_o(id_ex_vdb_o)
         );
 //****执行****
-    mux2 EX_MUX(
-        .in1(id_adpc_o),.in2(jalr_rs1_ors1),.sel(j_type_o),.out(mx_ad_o)//j=0,JAL(in1) j=1,JALR
-        );
-    add EX_ADD(
-        .in1(mx_ad_o),.shift(j_shift_o),.add_result(ex_add_o)
-        );
+    banch BAC(
+        .in1(ct_sel),.in2(ct),.banch(banch_j)//信号 banch_j为1则跳（使用Add的结果作为PC+1）
+        );//**in1未完工
     alu ALU(
         .clk(clk),.rst(rst),.source_regs(id_ex_vdb_o),
         .aluop_i(id_aluop_o),.funct7(id_alufuns_o),.funct(id_alusel_o),.wd_i(id_wd_o),.wreg_i(id_wreg_o),.in1(id_reg1_o), .in2(id_reg2_o),

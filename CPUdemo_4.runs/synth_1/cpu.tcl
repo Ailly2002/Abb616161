@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcsg324-1
 
@@ -98,6 +97,7 @@ read_verilog -library xil_defaultlib {
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/id_ex.v
+  D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/idmux.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/mux2.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v

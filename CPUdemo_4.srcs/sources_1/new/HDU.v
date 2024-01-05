@@ -1,6 +1,4 @@
-`include "define.v"
-//Hazard detection unit
-
+`include "define.v"//Hazard detection unit
 module hdu(
     input wire clk,
     //IDU和WBU修改记分牌入口
@@ -10,8 +8,6 @@ module hdu(
     input wire instvalid_i,
     //送到EXU，最终送到WBU
     output reg [9:0] source_regs,
-    //送到IDU，用于读取记分牌
-//    output reg [31:0] valid_bit,
     //流水线暂停信号
     output reg           stop 
 );
@@ -33,6 +29,7 @@ module hdu(
             end
             else if(use_vdb == 15'b00000_00000_00000)begin
                 stop <= `unStall;//0
+                source_regs <= {{use_vdb[14:10]},{use_vdb[9:5]}};
             end
             else  begin
                 stop <= `Stall;//1

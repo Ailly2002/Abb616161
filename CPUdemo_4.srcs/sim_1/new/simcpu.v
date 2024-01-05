@@ -6,7 +6,7 @@
       rst = 1;
       go = 1;
       #5 rst = 0;
-      #160 $stop;
+      #180 $stop;
     end
 
     cpu CPU(

@@ -4,12 +4,6 @@ module idex(
     input wire rst,
     input wire idexWrite,
     //从ID
-        //到Add
-    input wire [`ADDR_BUS]      pcadd_i,
-    input wire [`RegBus]        shift_i,//立即数偏移量，EX_ADD的另一个操作数
-        //到Add_MUX
-    input wire[`RegBus]         rs1_i,
-    input wire                  j_type_i,//跳转指令的类型：JAL/JALR
         //到ALU/EX
     input wire[`AluOpBus]       aluop_i,//
     input wire[6:0]             funct7_i,
@@ -21,13 +15,8 @@ module idex(
     //HDU间接
     input wire [9:0]            source_regs_i,
     
+    
     //输出到EX阶段(下一个阶段)
-        //到Add
-    output reg [`ADDR_BUS]      pcadd_o,
-    output reg [`RegBus]        shift,//立即数偏移量，EX_ADD的另一个操作数
-        //到Add_MUX
-    output reg[`RegBus]         rs1_o,
-    output reg                  j_type,//跳转指令的类型：JAL/JALR
         //到ALU/EX
     output reg[`AluOpBus]       aluop_o,//
     output reg[6:0]             funct7,
@@ -40,11 +29,6 @@ module idex(
 );
     always @(posedge clk) begin
             if(rst)begin
-                pcadd_o = 32'h000000;
-                shift = 32'h000000;//立即数偏移量，EX_ADD的另一个操作数
-            //到Add_MUX
-                rs1_o = 32'h000000;
-                j_type = 1'b0;//跳转指令的类型：JAL/JALR
             //到ALU/EX
                 aluop_o = 7'b0000000;
                 funct7 = 7'b0000000;
@@ -57,11 +41,6 @@ module idex(
             end 
             else begin
                 if(idexWrite == `unStall)begin
-                    pcadd_o <= pcadd_i;
-                    shift   <= shift_i;//立即数偏移量，EX_ADD的另一个操作数
-                //到Add_MUX
-                    rs1_o   <= rs1_i;
-                    j_type  <= j_type_i;//跳转指令的类型：JAL/JALR
                 //到ALU/EX
                     aluop_o <= aluop_i;
                     funct7  <= funct7_i;

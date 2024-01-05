@@ -13,7 +13,7 @@ module alu(
     input wire [`RegBus] in1, 
     input wire [`RegBus] in2,   //操作数in1和in2
     
-    output reg ct, //条件转移ct
+    output reg ct, //条件转移ct，用于BANCH类指令 跳转(1)/不跳转(0)
     output reg [9:0] ex_chvdb, //源寄存器地址，用于记分牌功能
     output reg[`RegAddr]         wd_o,
     output reg                   wreg_o,
@@ -23,7 +23,7 @@ module alu(
     reg[`RegBus] logicout;
     
     initial begin
-      ct = 0;
+      ct = 1;
       z = 0;  //初始化结果z为0
     end
     
@@ -81,10 +81,46 @@ module alu(
             end//************ opcode==OP_IMM end************
          else if(aluop_i==`LUI)begin
                 z = {{20'b0000_0000_0000_0000_0000},in1[11:0]}+{{in2[31:12]},{12'b0000_0000_0000}};//in1是目的寄存器的原内容
+                ct = 1'b1;
             end//************ opcode==LUI end************
          else if(aluop_i==`AUIPC)begin
                 z = in1 + in2;//rd = pc+extend'IMM_U
             end
+         else if(aluop_i==`JAL)begin
+                z = in1 + 32'b000000_000000_000000_000001;//rd = pc+1
+                ct = 1'b1;
+            end
+         else if(aluop_i==`JALR)begin
+                z = in1 + 32'b000000_000000_000000_000001;//rd = pc+1
+                ct = 1'b1;
+            end
+         else if(aluop_i==`BRANCH)begin
+                case(funct)
+                    3'b000:begin
+                        z=0;ct = (in1==in2);
+                        end
+                    3'b001:begin
+                        z=0;ct = (in1!=in2);
+                        end
+                    3'b010:begin
+                        z=0;ct = ($signed(in1)<$signed(in2));//BLT
+                        end
+                    3'b011:begin;
+                        z=0;ct = (in1<in2);//BLTU
+                        end
+                    3'b100:begin
+                        z=0;ct = ($signed(in1)>$signed(in2));//BGE
+                        end
+                    3'b101:begin;
+                        z=0;ct = (in1>in2);//BGEU
+                        end
+                endcase
+                //z = in1 ;//rd =
+                
+            end
+         else begin
+                ct = 1'b1;
+         end
       end
     always @ (posedge clk) begin
          wd_o = wd_i;       //要写的目的寄存器地址

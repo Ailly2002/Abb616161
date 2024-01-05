@@ -1,12 +1,11 @@
 //CU
 `include "define.v"
 module cu(
-//    input wire          clk,
+    input wire          clk,
     input wire          rst,
     input wire  [`InstBus]      inst,
     input wire  [`ADDR_BUS]     pcadd,//当前PC地址
     
-//    input wire [`RegBus]        valid_bit,//读取记分牌当前有效位
     
     //读取得Regfile的值
     input wire[`RegBus]         reg1_data,
@@ -19,9 +18,12 @@ module cu(
     //到HDU
     output reg                  instvalid_o,
     output reg[14:0]            use_vdb,//要使用的寄存器地址，用于记分牌功能
+    
     //到banch
     output reg     banch,
-    
+    //到IF/ID寄存器组
+        //分支指令暂停
+    output reg                 branch_stall,
     //输出到EX阶段(下一个阶段)
         //到Add
     output reg [`ADDR_BUS]      pcadd_o,
@@ -69,7 +71,7 @@ module cu(
                         
         end
         else begin
-            imm12   <= { {20{inst[31]}}, inst[31:20] };//12位I立即数,符号扩展
+            imm12   <= { {21{inst[31]}}, inst[31:20] };//12位I立即数,符号扩展
             imm20   <= { inst[31:12] , {12'b0000_0000_0000} };//20位U立即数,低位扩展
             funct3  <= inst[14:12];//3位funct
             operate <= inst[6:0];
@@ -86,6 +88,8 @@ module cu(
                         reg2_read <= `ReadEnable;
                         funct7=inst[31:25];
                         instvalid_o   =  `InstValid;//指令有效
+                        banch <= 1'b0; 
+                        branch_stall <= 1'b0;
                     end
                  `OP_IMM:begin
                         reg1_addr=inst[19:15];
@@ -97,7 +101,8 @@ module cu(
                         reg2_read <= `ReadDisable;
                         funct7=inst[31:25];//立即数高7位，供alu用
                         instvalid_o   =  `InstValid;
-
+                        banch <= 1'b0; 
+                        branch_stall <= 1'b0;
                     end
                  `LUI:begin
                         reg1_addr=inst[11:7];
@@ -105,9 +110,11 @@ module cu(
                         wd_o   =  inst[11:7];
                         aluop_o <= operate;
                         wreg_o  <=  `WriteEnable;
-                        reg1_read <= `ReadDisable;
+                        reg1_read <= `ReadEnable;
                         reg2_read <= `ReadDisable;
                         instvalid_o   =  `InstValid;
+                        banch <= 1'b0; 
+                        branch_stall <= 1'b0;
                     end
                     `AUIPC:begin
                         reg1_addr=5'b00000;
@@ -118,6 +125,8 @@ module cu(
                         reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
                         reg2_read <= `ReadDisable;
                         instvalid_o   =  `InstValid;
+                        banch <= 1'b0; 
+                        branch_stall <= 1'b0;
                     end
                     `JAL:begin//处理上可以类似U类指令，对其中的imm20进行分割截取
                         reg1_addr=5'b00000;
@@ -125,13 +134,15 @@ module cu(
                         wd_o   =  inst[11:7];
                             j_type <= 1'b0;
                             aluop_o <= operate;
-                            shift <= {{13{inst[31]}},inst[19:12],inst[20],inst[30:21]};//对偏移量符号拓展
-                            wreg_o  <=  `WriteDisable;//跳转指令不写回寄存器
+                            shift <= {{13{inst[31]}},{inst[19:12]},{inst[20]},{inst[30:21]}};//对偏移量符号拓展
+                            wreg_o  <=  `WriteEnable;//跳转指令将PC+1写回寄存器
                             reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
                             reg2_read <= `ReadDisable;
                             funct7=7'b0000000;
                             instvalid_o   =  `InstValid;
                             banch <= 1'b1; 
+                            branch_stall <= 1'b0;
+                            
                     end
                     `JALR:begin
                         reg1_addr=inst[19:15];
@@ -140,15 +151,31 @@ module cu(
                             j_type <= 1'b1;
                             aluop_o <= operate;
                             shift <= imm12;//inst[31:20]
-                            wreg_o  <=  `WriteDisable;//跳转指令不写回寄存器
-                            reg1_read <= `ReadEnable;//通过rs1间接跳转
+                            wreg_o  <=  `WriteEnable;//跳转指令将PC+1写回寄存器
+                            rs1_o <= reg1_addr;//通过rs1间接跳转
+                            reg1_read <= `ReadDisable;
                             reg2_read <= `ReadDisable;
                             instvalid_o   =  `InstValid;
                             banch <= 1'b1;
+                            branch_stall <= 1'b0;
                     end
                     `BRANCH:begin
+                            branch_stall <= 1'b1;
+                            reg1_addr=inst[19:15];
+                            reg2_addr=inst[24:20];
+                            wd_o   =  5'b00000;
+                            j_type <= 1'b0;
+                            aluop_o <= operate;
+                            shift = {{21{inst[31]}},{inst[7]},{inst[30:25]},{inst[11:8]}};
+                            wreg_o  <=  `WriteEnable;
+                            reg1_read <= `ReadEnable;
+                            reg2_read <= `ReadEnable;
+                            instvalid_o   =  `InstValid;
+                            banch <= 1'b1;
+                            branch_stall <= 1'b0;
                     end
                 default:begin
+                    branch_stall <= 1'b0;
                     instvalid_o   <=  `InstInvalid;
                 end
             endcase
@@ -165,6 +192,8 @@ module cu(
             if(operate == `AUIPC)begin
                 reg1_o <= pcadd;end
             else if(operate == `JAL)begin
+                reg1_o <= pcadd;end
+            else if(operate == `JALR)begin
                 reg1_o <= pcadd;end
             else begin
                 reg1_o <= `ZeroWord;end          //立即数
@@ -197,21 +226,9 @@ module cu(
             use_vdb <= {{reg2_addr},{reg1_addr},{wd_o}};
         end
     end
-    
-    //******
-//    always @(*) begin
-//      case(funct)
-//        3'b000: {stop,uct,acc_wr,dataMem_wr,alu_op} = 8'b00100000;   //1,清除累加器CLA
-//        3'b001: {stop,uct,acc_wr,dataMem_wr,alu_op} = 8'b00100001;   //2,累加器取反COM    
-//        3'b010: {stop,uct,acc_wr,dataMem_wr,alu_op} = 8'b00100010;   //3,算术右移一位SHR
-//        3'b011: {stop,uct,acc_wr,dataMem_wr,alu_op} = 8'b00100011;   //4,循环左移一位CSL
-//        3'b100: {stop,uct,acc_wr,dataMem_wr,alu_op} = 8'b00100100;   //5,加法指令ADD
-//        3'b101: {stop,uct,acc_wr,dataMem_wr,alu_op} = 8'b00010101;   //6,存数STA
-//        3'b110: {stop,uct,acc_wr,dataMem_wr,alu_op} = 8'b00100110;   //7,取数指LDA
-//        3'b111: {stop,uct,acc_wr,dataMem_wr,alu_op} = 8'b01000111;   //8,无条件转移JMP
-////        4'b1000: {stop,uct,acc_wr,dataMem_wr,alu_op} = 8'b00001000;   //9,有条件转移BAN
-////        4'b1001: {stop,uct,acc_wr,dataMem_wr,alu_op} = 8'b10000000;   //10,停机STOP
-//        endcase
-//    end
+    //ifflush唤醒
+    always@(posedge clk)begin
+        branch_stall <= 1'b0;
+    end
 
 endmodule

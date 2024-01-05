@@ -198,3 +198,97 @@ close_sim
 launch_simulation
 source simcpu.tcl
 relaunch_sim
+save_wave_config {D:/FPGAdemo/CPUdemo_4/simcpu_behav25.wcfg}
+add_files -fileset sim_1 -norecurse D:/FPGAdemo/CPUdemo_4/simcpu_behav25.wcfg
+set_property xsim.view D:/FPGAdemo/CPUdemo_4/simcpu_behav25.wcfg [get_filesets sim_1]
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+open_wave_config D:/FPGAdemo/CPUdemo_4/simcpu_behav25.wcfg
+source simcpu.tcl
+close_sim
+launch_simulation
+open_wave_config D:/FPGAdemo/CPUdemo_4/simcpu_behav25.wcfg
+source simcpu.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+open_wave_config D:/FPGAdemo/CPUdemo_4/simcpu_behav25.wcfg
+source simcpu.tcl
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+close_sim
+launch_simulation
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+open_wave_config {D:/FPGAdemo/CPUdemo_4/simcpu_behav25.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/FPGAdemo/CPUdemo_4/simcpu_behav25.wcfg
+source simcpu.tcl
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+close_sim
+launch_simulation
+source simcpu.tcl
+relaunch_sim
+relaunch_sim
+close_sim
