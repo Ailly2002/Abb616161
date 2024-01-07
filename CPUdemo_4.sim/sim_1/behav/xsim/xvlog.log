@@ -1,0 +1,38 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/Add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/HDU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hdu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/IF_ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ifid
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+WARNING: [VRFC 10-2096] empty statement in sequential block [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v:108]
+WARNING: [VRFC 10-2096] empty statement in sequential block [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v:114]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/banch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module banch
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_use
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module digit_tubes
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/gpr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/id_ex.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module idex
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/idmux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module idmux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/insreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module insReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/mux2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wbu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sim_1/new/simcpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module simcpu

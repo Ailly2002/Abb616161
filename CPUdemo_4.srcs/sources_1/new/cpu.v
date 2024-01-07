@@ -119,7 +119,7 @@ module cpu(
         .we(wb_wreg),.wd_addr(wb_wd),.wd_wdata(wb_wdata),.disp_dat(rg_digd)
         );
     idmux ID_MUX(
-        .in1(id_adpc_i),.in2(jalr_rs1_i),.sel(j_type_i),.out(mx_ad_o)//j=0,JAL(in1) j=1,JALR
+        .in1(id_adpc_i),.in2(jalr_rs1_i),.sel(j_type_i),.out(mx_ad_o)//跳转地址计算器输入选择器，j=0,JAL(in1) j=1,JALR
         );
     add ID_ADD(
         .in1(mx_ad_o),.shift(j_shift_i),.add_result(ex_add_o)

@@ -20,7 +20,7 @@ module hdu(
         end
     always @(use_vdb)begin//检测数据相关
         if(instvalid_i == `InstValid)begin//如果指令有效
-            if((reg_valid[use_vdb[14:10]]==0 || use_vdb[14:10]==5'b00000)&&(reg_valid[use_vdb[9:5]]==0 || use_vdb[9:5]==5'b00000) &&(reg_valid[use_vdb[4:0]]==0 || use_vdb[4:0]==5'b00000))begin
+            if(((reg_valid[use_vdb[14:10]]==0) || (use_vdb[14:10]==5'b00000))&&((reg_valid[use_vdb[9:5]]==0) || (use_vdb[9:5]==5'b00000)) &&((reg_valid[use_vdb[4:0]]==0) || (use_vdb[4:0]==5'b00000)))begin
                 stop <= `unStall;//0
                 if(use_vdb[4:0] != 5'b00000)    reg_valid[use_vdb[4:0]]     <=1'b1;//使用，修改记分牌的对应十进制数位
                 if(use_vdb[9:5] != 5'b00000)    reg_valid[use_vdb[9:5]]     <=1'b1;

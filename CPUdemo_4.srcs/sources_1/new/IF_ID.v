@@ -11,7 +11,7 @@ module ifid(
     output reg[`ADDR_BUS]      pcadd
 );
     always @(posedge clk) begin
-        if(rst|ifflush)begin
+        if(rst || ifflush)begin
             inst = 32'h000000;
             pcadd = 32'h000000;
         end
@@ -22,4 +22,5 @@ module ifid(
             end
         end
     end
+
 endmodule

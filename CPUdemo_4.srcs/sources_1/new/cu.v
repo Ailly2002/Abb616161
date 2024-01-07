@@ -23,7 +23,7 @@ module cu(
     output reg     banch,
     //到IF/ID寄存器组
         //分支指令暂停
-    output reg                 branch_stall,
+    output reg                 branch_stall,//名为branch,实际上是条件/无条件转移均使用的IF冲刷信号
     //输出到EX阶段(下一个阶段)
         //到Add
     output reg [`ADDR_BUS]      pcadd_o,
@@ -83,6 +83,7 @@ module cu(
                         wd_o   =  inst[11:7];
                         //在所有格式中，RISC-V ISA将源寄存器（rs1和rs2）和目标寄存器（rd）固定在同样的位置，以简化指令译码
                         aluop_o <= operate;
+                        shift <= 32'b0;
                         wreg_o  <=  `WriteEnable;
                         reg1_read <= `ReadEnable;
                         reg2_read <= `ReadEnable;
@@ -96,6 +97,7 @@ module cu(
                         reg2_addr=5'b00000;
                         wd_o   =  inst[11:7];
                         aluop_o <= operate;
+                        shift <= 32'b0;
                         wreg_o  <=  `WriteEnable;
                         reg1_read <= `ReadEnable;
                         reg2_read <= `ReadDisable;
@@ -109,6 +111,7 @@ module cu(
                         reg2_addr=5'b00000;
                         wd_o   =  inst[11:7];
                         aluop_o <= operate;
+                        shift <= 32'b0;
                         wreg_o  <=  `WriteEnable;
                         reg1_read <= `ReadEnable;
                         reg2_read <= `ReadDisable;
@@ -121,6 +124,7 @@ module cu(
                         reg2_addr=5'b00000;
                         wd_o   =  inst[11:7];
                         aluop_o <= operate;
+                        shift <= 32'b0;
                         wreg_o  <=  `WriteEnable;
                         reg1_read <= `ReadDisable;//通过rs1读取PC当前的地址
                         reg2_read <= `ReadDisable;
@@ -141,7 +145,7 @@ module cu(
                             funct7=7'b0000000;
                             instvalid_o   =  `InstValid;
                             banch <= 1'b1; 
-                            branch_stall <= 1'b0;
+                            branch_stall <= 1'b1;
                             
                     end
                     `JALR:begin
@@ -157,22 +161,21 @@ module cu(
                             reg2_read <= `ReadDisable;
                             instvalid_o   =  `InstValid;
                             banch <= 1'b1;
-                            branch_stall <= 1'b0;
+                            branch_stall <= 1'b1;
                     end
                     `BRANCH:begin
-                            branch_stall <= 1'b1;
                             reg1_addr=inst[19:15];
                             reg2_addr=inst[24:20];
                             wd_o   =  5'b00000;
                             j_type <= 1'b0;
                             aluop_o <= operate;
                             shift = {{21{inst[31]}},{inst[7]},{inst[30:25]},{inst[11:8]}};
-                            wreg_o  <=  `WriteEnable;
+                            wreg_o  <=  `WriteDisable;//分支指令不写回寄存器
                             reg1_read <= `ReadEnable;
                             reg2_read <= `ReadEnable;
                             instvalid_o   =  `InstValid;
                             banch <= 1'b1;
-                            branch_stall <= 1'b0;
+                            branch_stall <= 1'b1;
                     end
                 default:begin
                     branch_stall <= 1'b0;
@@ -215,6 +218,10 @@ module cu(
                 reg2_o <= imm20;end
             else if(operate == `AUIPC)begin
                 reg2_o <= imm20;end
+            else if(operate == `JAL)begin
+                reg2_o <= 32'b000000_000000_000000_000000_000000_01;end
+            else if(operate == `JALR)begin
+                reg2_o <= 32'b000000_000000_000000_000000_000000_01;end
         end else begin
             reg2_o <= `ZeroWord;
         end
