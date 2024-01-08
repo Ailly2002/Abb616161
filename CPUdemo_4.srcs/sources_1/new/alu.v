@@ -23,7 +23,7 @@ module alu(
     reg[`RegBus] logicout;
     
     initial begin
-      ct = 1;
+      ct = 1'b0;
       z = 0;  //初始化结果z为0
     end
     
@@ -81,14 +81,15 @@ module alu(
             end//************ opcode==OP_IMM end************
          else if(aluop_i==`LUI)begin
                 z = {{20'b0000_0000_0000_0000_0000},in1[11:0]}+{{in2[31:12]},{12'b0000_0000_0000}};//in1是目的寄存器的原内容
-                ct = 1'b1;
+                ct = 1'b0;
             end//************ opcode==LUI end************
          else if(aluop_i==`AUIPC)begin
                 z = in1 + in2;//rd = pc+extend'IMM_U
+                ct = 1'b0;
             end
          else if(aluop_i==`JAL)begin
                 z = in1 + 32'b000000_000000_000000_000001;//rd = pc+1
-                ct = 1'b1;
+                ct = 1'b0;
             end
          else if(aluop_i==`JALR)begin
                 z = in1 + 32'b000000_000000_000000_000001;//rd = pc+1
@@ -97,10 +98,10 @@ module alu(
          else if(aluop_i==`BRANCH)begin
                 case(funct)
                     3'b000:begin
-                        z=0;ct = (in1==in2);
+                        z=0;ct = (in1&in2);//BEQ
                         end
                     3'b001:begin
-                        z=0;ct = (in1!=in2);
+                        z=0;ct = ~(in1&in2);//BNE
                         end
                     3'b010:begin
                         z=0;ct = ($signed(in1)<$signed(in2));//BLT

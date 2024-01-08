@@ -136,7 +136,7 @@ module cu(
                         reg1_addr=5'b00000;
                         reg2_addr=5'b00000;
                         wd_o   =  inst[11:7];
-                            j_type <= 1'b0;
+                            j_type <= 1'b0;//目标地址计算的基址来源：PC
                             aluop_o <= operate;
                             shift <= {{13{inst[31]}},{inst[19:12]},{inst[20]},{inst[30:21]}};//对偏移量符号拓展
                             wreg_o  <=  `WriteEnable;//跳转指令将PC+1写回寄存器
@@ -144,7 +144,7 @@ module cu(
                             reg2_read <= `ReadDisable;
                             funct7=7'b0000000;
                             instvalid_o   =  `InstValid;
-                            banch <= 1'b1; 
+                            banch <= 1'b1; //是否是控制转移指令
                             branch_stall <= 1'b1;
                             
                     end
@@ -152,7 +152,7 @@ module cu(
                         reg1_addr=inst[19:15];
                         reg2_addr=5'b00000;
                         wd_o   =  inst[11:7];
-                            j_type <= 1'b1;
+                            j_type <= 1'b1;//目标地址计算的基址来源：基址寄存器
                             aluop_o <= operate;
                             shift <= imm12;//inst[31:20]
                             wreg_o  <=  `WriteEnable;//跳转指令将PC+1写回寄存器
