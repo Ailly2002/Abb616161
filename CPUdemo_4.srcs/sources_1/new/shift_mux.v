@@ -7,5 +7,5 @@ module shift_mux(
     output wire [`RegBus]    out
 );
     //如果sel为1，则out等于in2；否则out等于in1
-    assign out = sel?in2:(in1+1);
+    assign out = sel?in2:(in1+2);
 endmodule

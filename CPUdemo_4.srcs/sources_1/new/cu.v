@@ -50,7 +50,7 @@ module cu(
     
     initial begin
         instvalid_o   <=  `InstInvalid;//指示指令是否有效
-        banch <= 1'b1;//默认跳转
+        banch <= 1'b0;
     end
     
     always @(*) begin
@@ -175,7 +175,7 @@ module cu(
                             reg2_read <= `ReadEnable;
                             instvalid_o   =  `InstValid;
                             banch <= 1'b1;
-                            branch_stall <= 1'b1;
+                            branch_stall <= 1'b0;
                     end
                 default:begin
                     branch_stall <= 1'b0;

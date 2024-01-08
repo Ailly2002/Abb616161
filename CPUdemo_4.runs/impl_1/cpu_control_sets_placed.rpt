@@ -1,7 +1,7 @@
 Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2.2 (win64) Build 3788238 Tue Feb 21 20:00:34 MST 2023
-| Date         : Mon Jan  8 17:41:30 2024
+| Date         : Mon Jan  8 20:36:22 2024
 | Host         : LAPTOP-T2VDSBIN running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file cpu_control_sets_placed.rpt
 | Design       : cpu
