@@ -104,6 +104,7 @@ read_verilog -library xil_defaultlib {
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/pc_add.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/regs.v
+  D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/shift_mux.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v
 }
 OPTRACE "Adding files" END { }

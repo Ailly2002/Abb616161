@@ -18,6 +18,7 @@ verilog xil_defaultlib  \
 "../../../../CPUdemo_4.srcs/sources_1/new/pc.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/pc_add.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/regs.v" \
+"../../../../CPUdemo_4.srcs/sources_1/new/shift_mux.v" \
 "../../../../CPUdemo_4.srcs/sim_1/new/simcpu.v" \
 
 # compile glbl module

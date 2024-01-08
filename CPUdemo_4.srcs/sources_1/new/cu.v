@@ -144,7 +144,7 @@ module cu(
                             reg2_read <= `ReadDisable;
                             funct7=7'b0000000;
                             instvalid_o   =  `InstValid;
-                            banch <= 1'b1; //是否是控制转移指令
+                            banch <= 1'b1; //是否是分支指令
                             branch_stall <= 1'b1;
                             
                     end
@@ -226,9 +226,10 @@ module cu(
             reg2_o <= `ZeroWord;
         end
     end
-    //维护记分牌
+    
     always @(*)begin
         pcadd_o  <= pcadd;
+        //维护记分牌
         if(~instvalid_o)begin
             use_vdb <= {{reg2_addr},{reg1_addr},{wd_o}};
         end

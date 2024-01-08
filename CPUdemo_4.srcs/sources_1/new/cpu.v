@@ -60,8 +60,10 @@ module cpu(
     //连接ID和EX_ADD
     wire[`RegBus] j_shift_i;
     wire[`RegBus] j_shift_o;
-    //连接EX_ADD和PC_MUX
+    //连接EX_ADD和BRANCH_MUX
     wire[`RegBus] ex_add_o;
+    //连接BRANCH_MUX和ADD_MUX
+    wire[`RegBus] shift_add;
     //连接EX模块和WB模块
     wire[9:0] ex_wb_vdb;
     wire ex_wreg;
@@ -87,7 +89,7 @@ module cpu(
         .clk(clk), .rst(rst),.pc_Write(stop),.pc_set(pc_i),.pc_bus_o(pc_bus)
         );//偏移字段有干涉，待修改
     mux2 ADD_MUX(
-        .in1(pc_add_o),.in2(ex_add_o),.sel(banch_j),.out(pc_i)
+        .in1(pc_add_o),.in2(shift_add),.sel(ct_sel),.out(pc_i)
         );
     pc_add PC_ADD(
         .pc_dr(pc_bus),.pc(pc_add_o)
@@ -131,10 +133,13 @@ module cpu(
         .aluop_o(id_aluop_o),.funct7(id_alufuns_o),.funct3(id_alusel_o),.reg1_o(id_reg1_o),.reg2_o(id_reg2_o),.wd_o(id_wd_o),.wreg_o(id_wreg_o),.source_regs_o(id_ex_vdb_o)
         );
     branch_condition BAC_CON(
-        .funct(id_alusel_i),.in1(id_reg1_i),.in2(id_reg1_i),.ct(ct)
+        .funct(id_alusel_i),.in1(id_reg1_i),.in2(id_reg2_i),.ct(ct)
         );
     branch BAC(
-        .in1(ct_sel),.in2(ct),.banch(banch_j)//信号 banch_j为1则跳（使用Add的结果作为PC+1） ct_sel为1说明是控制转移指令，ct为1说明分支条件计算为"跳"
+        .in1(ct_sel),.in2(ct),.banch(banch_j)//信号 banch_j为1则跳（使用Add的结果作为PC+1） ct_sel为1说明是分支指令，ct为1说明分支条件计算为"跳"
+        );
+    shift_mux SHIFT_MUX(
+        .in1(id_adpc_i),.in2(ex_add_o),.sel(banch_j),.out(shift_add)//跳（banch_j == 1）则输出目的地址，不跳则输出本条指令PC地址
         );
 //****执行****
     alu ALU(
