@@ -100,7 +100,8 @@ module cpu(
     
     ifid IF_ID(
         .clk(clk),.rst(rst),
-        .ifflush(IF_Flush),.Ins(ins),.pcaddr(ir_idpc),.ifidWrite(stop),.branch_j(banch_j),
+        .Ins(ins),.pcaddr(ir_idpc),
+        .ifflush(IF_Flush),.ifidWrite(stop),.branch_j(banch_j),
         .inst(ifid_ins_o),.pcadd(ifid_pcdr_o)
         );
 //****выТы****
