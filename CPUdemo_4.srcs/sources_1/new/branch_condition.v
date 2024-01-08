@@ -8,10 +8,10 @@ module branch_condition(
 always @(*)begin
     case(funct)
                     3'b000:begin
-                        ct <= (in1&in2);//BEQ
+                        ct <= (in1==in2);//BEQ
                         end
                     3'b001:begin
-                        ct <= ~(in1&in2);//BNE
+                        ct <= ~(in1==in2);//BNE
                         end
                     3'b010:begin
                         ct <= ($signed(in1)<$signed(in2));//BLT

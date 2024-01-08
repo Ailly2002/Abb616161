@@ -8,4 +8,29 @@ WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for
 WARNING: [VRFC 10-5021] port 'ct' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:86]
 WARNING: [VRFC 10-5021] port 'alusel_i' is not connected on this instance [D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cpu.v:140]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/FPGAdemo/CPUdemo_4/CPUdemo_4.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.pc
+Compiling module xil_defaultlib.mux2
+Compiling module xil_defaultlib.pc_add
+Compiling module xil_defaultlib.insReg
+Compiling module xil_defaultlib.ifid
+Compiling module xil_defaultlib.cu
+Compiling module xil_defaultlib.hdu
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.idmux
+Compiling module xil_defaultlib.add
+Compiling module xil_defaultlib.idex
+Compiling module xil_defaultlib.branch_condition
+Compiling module xil_defaultlib.branch
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.wbu
+Compiling module xil_defaultlib.clk_use
+Compiling module xil_defaultlib.digit_tubes
+Compiling module xil_defaultlib.cpu
+Compiling module xil_defaultlib.simcpu
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot simcpu_behav
