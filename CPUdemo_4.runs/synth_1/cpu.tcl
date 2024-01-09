@@ -93,6 +93,7 @@ read_verilog -library xil_defaultlib {
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/alu.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/banch.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/branch_condition.v
+  D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/branch_historytable.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/clk_use.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/cu.v
   D:/FPGAdemo/CPUdemo_4/CPUdemo_4.srcs/sources_1/new/digit.v

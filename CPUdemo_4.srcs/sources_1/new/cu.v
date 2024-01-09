@@ -20,10 +20,10 @@ module cu(
     output reg[14:0]            use_vdb,//要使用的寄存器地址，用于记分牌功能
     
     //到banch
-    output reg     banch,
+    output reg                  banch,
     //到IF/ID寄存器组
         //分支指令暂停
-    output reg                 branch_stall,//名为branch,实际上是条件/无条件转移均使用的IF冲刷信号
+    output reg                  branch_stall,//名为branch,实际上是条件/无条件转移均使用的IF冲刷信号
     //输出到EX阶段(下一个阶段)
         //到Add
     output reg [`ADDR_BUS]      pcadd_o,
@@ -32,13 +32,13 @@ module cu(
     output reg[`RegBus]         rs1_o,
     output reg                  j_type,//跳转指令的类型：JAL/JALR
         //到ALU/EX
-    output reg[`AluOpBus]       aluop_o,//
+    output reg[`AluOpBus]       aluop_o,
     output reg[6:0]             funct7,
     output reg[`AluSelBus]      funct3,//funct//
-    output reg[`RegBus]         reg1_o,//
-    output reg[`RegBus]         reg2_o,//
-    output reg[`RegAddr]        wd_o,//
-    output reg                  wreg_o//
+    output reg[`RegBus]         reg1_o,
+    output reg[`RegBus]         reg2_o,
+    output reg[`RegAddr]        wd_o,
+    output reg                  wreg_o
 );
     
     reg[`OPcode] operate;//7位指令操作码,操作码类型

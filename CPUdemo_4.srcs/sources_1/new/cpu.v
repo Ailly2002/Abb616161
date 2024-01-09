@@ -7,6 +7,7 @@ module cpu(
 );
     wire stop, ct;
     wire banch_j;
+    wire branch_j_i;
     wire branch_stall;
     wire IF_Flush;//分支指令流水线冲刷信号
     wire [`ADDR_BUS] pc_addr;//32位pc
@@ -97,11 +98,13 @@ module cpu(
     insReg IR(
         .addr(pc_bus),.Ins(ins),.pcaddr(ir_idpc)
         );
-    
+    bht BHT(
+        .clk(clk),.rst(rst),.branch(ct_sel),.in(banch_j),.out(branch_j_i)
+        );
     ifid IF_ID(
         .clk(clk),.rst(rst),
         .Ins(ins),.pcaddr(ir_idpc),
-        .ifflush(IF_Flush),.ifidWrite(stop),.branch_j(banch_j),
+        .ifflush(IF_Flush),.ifidWrite(stop),.branch_j(branch_j_i),
         .inst(ifid_ins_o),.pcadd(ifid_pcdr_o)
         );
 //****译码****

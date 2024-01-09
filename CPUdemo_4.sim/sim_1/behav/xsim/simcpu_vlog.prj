@@ -6,6 +6,7 @@ verilog xil_defaultlib  \
 "../../../../CPUdemo_4.srcs/sources_1/new/alu.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/banch.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/branch_condition.v" \
+"../../../../CPUdemo_4.srcs/sources_1/new/branch_historytable.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/clk_use.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/cpu.v" \
 "../../../../CPUdemo_4.srcs/sources_1/new/cu.v" \

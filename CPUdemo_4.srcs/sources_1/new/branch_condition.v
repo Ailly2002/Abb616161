@@ -20,10 +20,10 @@ always @(*)begin
                         ct <= (in1<in2);//BLTU
                         end
                     3'b100:begin
-                        ct <= ($signed(in1)>$signed(in2));//BGE
+                        ct <= ($signed(in1)>$signed(in2));//BGEU
                         end
                     3'b101:begin;
-                        ct <= (in1>in2);//BGEU
+                        ct <= (in1>in2);//BGE
                         end
                 endcase
 end
