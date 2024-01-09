@@ -6,7 +6,7 @@ module insReg(
     output wire [`InstBus] Ins,  //32位指令
     output wire [`ADDR_BUS] pcaddr
 );
-    reg[`InstBus] unit[63:0];//unit[4096:0];  //2^12个存储单元,每个存储单元32位
+    reg[`InstBus] unit[4095:0]; //2^12个存储单元,每个存储单元32位
 
     initial begin//初始化，预先在IR中存入指令
         //unit[0] = 32'b0000000//00000//00000//000//00001//0000000;    //0000 0000 0000 0000  清除累加器指令CLA
